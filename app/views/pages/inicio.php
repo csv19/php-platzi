@@ -34,7 +34,7 @@
 
   <div class="py-6 text-center text-5xl font-bold leading-snug">
     <span class="text-white">La escuela de tecnología</span><br>
-    <span class="text-green-400	">de Latinoamérica</span>
+    <span class="text-green-400 ">de Latinoamérica</span>
     <p class="text-2xl text-gray-300 font-normal my-4">
       Más de 5 millones de estudiantes y más <br> de 3.000 empresas aprenden en Platzi <br> <br>
       ¿Qué quieres aprender?
@@ -49,11 +49,14 @@
         </svg></button>
         <div id="searchSelect" class="bg-select relative">
             <ul class="p-2 text-sm font-normal text-left">
+            
               <li class="hover:cursor-pointer flex items-center hover:bg-gray-800/50 p-4 rounded-md gap-4">
-              <figure><img alt="Curso de Inteligencia Artificial" loading="lazy" width="20" height="20" decoding="async" data-nimg="1" srcset="https://static.platzi.com/cdn-cgi/image/width=1024,quality=50,format=auto/media/achievements/inteligencia-artificial-para-el-trabajo-badge-fd13573b-3003-402b-8386-835531f3a851.png 1x, https://static.platzi.com/cdn-cgi/image/width=1024,quality=50,format=auto/media/achievements/inteligencia-artificial-para-el-trabajo-badge-fd13573b-3003-402b-8386-835531f3a851.png 2x" src="https://static.platzi.com/cdn-cgi/image/width=1024,quality=50,format=auto/media/achievements/inteligencia-artificial-para-el-trabajo-badge-fd13573b-3003-402b-8386-835531f3a851.png" style="color: transparent;"></figure>
+              <figure><img alt="Curso de Inteligencia Artificial" loading="lazy" width="20" height="20" decoding="async" data-nimg="1" 
+              srcset="https://static.platzi.com/cdn-cgi/image/width=1024,quality=50,format=auto/media/achievements/inteligencia-artificial-para-el-trabajo-badge-fd13573b-3003-402b-8386-835531f3a851.png 1x, https://static.platzi.com/cdn-cgi/image/width=1024,quality=50,format=auto/media/achievements/inteligencia-artificial-para-el-trabajo-badge-fd13573b-3003-402b-8386-835531f3a851.png 2x" src="https://static.platzi.com/cdn-cgi/image/width=1024,quality=50,format=auto/media/achievements/inteligencia-artificial-para-el-trabajo-badge-fd13573b-3003-402b-8386-835531f3a851.png" style="color: transparent;"></figure>
                 Curso de Inteligencia Artificial</li>
               <li class="hover:cursor-pointer flex items-center hover:bg-gray-800/50 p-4 rounded-md gap-4">
-              <figure><img alt="Introducción a Ciberseguridad: Prevención de Ataques Informáticos" loading="lazy" width="20" height="20" decoding="async" data-nimg="1" srcset="https://static.platzi.com/cdn-cgi/image/width=1024,quality=50,format=auto/media/achievements/badge-taller-ciberseguridad-4e4b663e-50c2-4d1b-a204-4c88b78c6e49.png 1x, https://static.platzi.com/cdn-cgi/image/width=1024,quality=50,format=auto/media/achievements/badge-taller-ciberseguridad-4e4b663e-50c2-4d1b-a204-4c88b78c6e49.png 2x" src="https://static.platzi.com/cdn-cgi/image/width=1024,quality=50,format=auto/media/achievements/badge-taller-ciberseguridad-4e4b663e-50c2-4d1b-a204-4c88b78c6e49.png" style="color: transparent;"></figure>  
+              <figure><img alt="Introducción a Ciberseguridad: Prevención de Ataques Informáticos" loading="lazy" width="20" height="20" decoding="async" data-nimg="1" 
+              srcset="https://static.platzi.com/cdn-cgi/image/width=1024,quality=50,format=auto/media/achievements/badge-taller-ciberseguridad-4e4b663e-50c2-4d1b-a204-4c88b78c6e49.png 1x, https://static.platzi.com/cdn-cgi/image/width=1024,quality=50,format=auto/media/achievements/badge-taller-ciberseguridad-4e4b663e-50c2-4d1b-a204-4c88b78c6e49.png 2x" src="https://static.platzi.com/cdn-cgi/image/width=1024,quality=50,format=auto/media/achievements/badge-taller-ciberseguridad-4e4b663e-50c2-4d1b-a204-4c88b78c6e49.png" style="color: transparent;"></figure>  
               Programación</li>
               <li class="hover:cursor-pointer flex items-center hover:bg-gray-800/50 p-4 rounded-md gap-4">
               <figure><img alt="Curso de Inglés Básico A1 para Principiantes" loading="lazy" width="20" height="20" decoding="async" data-nimg="1" srcset="https://static.platzi.com/cdn-cgi/image/width=1024,quality=50,format=auto/media/achievements/curso-ingles-basico-a1-para-principiantes_badge-65b8b027-2451-488b-b282-80077d60d62.png 1x, https://static.platzi.com/cdn-cgi/image/width=1024,quality=50,format=auto/media/achievements/curso-ingles-basico-a1-para-principiantes_badge-65b8b027-2451-488b-b282-80077d60d62.png 2x" src="https://static.platzi.com/cdn-cgi/image/width=1024,quality=50,format=auto/media/achievements/curso-ingles-basico-a1-para-principiantes_badge-65b8b027-2451-488b-b282-80077d60d62.png" style="color: transparent;"></figure>  
@@ -69,5 +72,19 @@
   </div>
 </section>
 
+<section class="container mx-auto z-10">
+    <div class="grid grid-cols-4 gap-4">
+        <!-- Obetner cursos de la bd -->
+        <?php foreach ($datos as $curso): ?>
+            <div><?= $curso ?></div>
+        <?php endforeach; ?>
+
+
+
+        
+        
+
+    </div>
+</section>
 
 <?php require_once APP . '/views/inc/footer.php' ?>

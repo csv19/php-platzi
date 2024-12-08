@@ -1,12 +1,24 @@
 <?php
 class Control
 {
+  
   public function load_model($model)
   {
-    require_once '../app/models/' . $model . '.php';
+    $file = '../app/models/' . $model . '.php';
 
-    return new $model;
-  }
+    if (!file_exists($file)) {
+        die("El archivo del modelo no existe: " . $file);
+    }
+
+    require_once $file;
+
+    if (!class_exists($model)) {
+        die("La clase $model no está definida en el archivo $file");
+    }
+
+    return new $model();
+}
+
 
   public function load_view($view, $datos = [])
   {

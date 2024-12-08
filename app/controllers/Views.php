@@ -1,16 +1,15 @@
 <?php
-
 class Views extends Control
 {
 
   public function inicio()
-  {
-    $datos = [
-      "title" => "Inicio"
-    ];
-    $this->load_view('inicio', $datos);
+  {    
+    $cursoModel = $this->load_model('Curso');
+    $datos = $cursoModel->getCursos();
+   
+    $this->load_view('prueba',$datos);
   }
-
+  
   public function update($id)
   {
     echo "Update view " . $id;
