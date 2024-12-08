@@ -6,7 +6,7 @@ class Database
 
     private $host = "localhost";
     private $username = "root";
-    private $password = "santarosa";
+    private $password = "";
     private $database = "platzi";
 
     // Constructor privado para evitar instanciación directa

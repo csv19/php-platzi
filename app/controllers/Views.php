@@ -7,7 +7,7 @@ class Views extends Control
     $cursoModel = $this->load_model('Curso');
     $datos = $cursoModel->getCursos();
    
-    $this->load_view('prueba',$datos);
+    $this->load_view('inicio',$datos);
   }
   
   public function update($id)

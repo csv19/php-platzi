@@ -52,7 +52,7 @@ DROP TABLE IF EXISTS `cursos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `cursos` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `url` text COLLATE utf8mb4_general_ci,
   `nombre` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `descripcion` text COLLATE utf8mb4_general_ci,
@@ -105,7 +105,7 @@ DROP TABLE IF EXISTS `secciones`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `secciones` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `id_curso` int DEFAULT NULL,
   `nombre` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `descripcion` text COLLATE utf8mb4_general_ci,
@@ -193,7 +193,7 @@ DROP TABLE IF EXISTS `videos`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `videos` (
-  `id` int NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
   `id_seccion` int DEFAULT NULL,
   `url` text COLLATE utf8mb4_general_ci,
   PRIMARY KEY (`id`),

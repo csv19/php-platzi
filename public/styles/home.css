@@ -1,81 +1,224 @@
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
-body, html {
-    background-color: #13161c;
-    max-width: 100svw;
-    min-height: 100svh;
-}
-.bg-gradient{
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
-    position: relative;
-    min-height: 100svh;
-    z-index: 1;
-    overflow-x: hidden;
-}
-.bg-gradient:after, .bg-gradient:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 100%;
-    width: 100%;
-}
-.bg-gradient:before{
-    background-size:100%;
-    content: "";
-    background-color: #13161c;
-    background-image: radial-gradient(37.88% 68.62% at 50% 0,rgba(10,233,138,.3) 0,rgba(0,124,71,0) 80%),
-    radial-gradient(10% 10% at 50% 0,rgba(10,233,138,.5) 0,rgba(0,124,71,.4) 90%,rgba(0,124,71,0) 0),radial-gradient(100% 28.09% at 100% 10%,rgba(10,233,138,.2) 0,rgba(0,124,71,.1) 80%,rgba(0,124,71,0) 100%),linear-gradient(180deg,rgba(0,124,71,.075) 35.79%,rgba(0,124,71,.05) 80%,#13161c),
-    radial-gradient(74.84% 135.56% at 100% 10%,rgba(0,124,71,.5) 0,#13161c 80%);
-    background-repeat: no-repeat;
-    /* background-size: 220%; */
-    height: 100svh;
-    z-index: -2;
-    filter: blur(50px);
-    top: -50px;
-    left: -50px;
-    right: -50px;
-    width: calc(100% + 100px);
-    overflow-x: hidden;
-}
-.banner-navidad{
-    background:linear-gradient(180deg,#FFFFFF1A 0%,#FDC05B4D 2.43%,#FFFFFF1A 5.45%,#FFFFFF00 11.74%),linear-gradient(180deg,#00000000 88.26%,#0000001A 94.55%,#00000033 97.57%),url('https://static.platzi.com/media/uploads/stars_bg_e45a0554b4.png'),linear-gradient(0deg,#061C3E 8.2%,#B83333 100%),linear-gradient(90deg,#061C3E 8.2%,#B83333 35.41%,#FD5661 82.91%,#061C3E 100%);color:#FFFFFF;--ctaBorderColor:linear-gradient(180deg, rgba(255, 255, 255, 0.10) 0%, rgba(253, 192, 91, 0.30) 2.43%, rgba(255, 255, 255, 0.10) 5.45%, rgba(255, 255, 255, 0.00) 11.74%), linear-gradient(180deg, rgba(0, 0, 0, 0.00) 88.26%, rgba(0, 0, 0, 0.10) 94.55%, rgba(0, 0, 0, 0.20) 97.57%), #061C3E;
-}
-.banner-navidad-end{
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.10) 0%, rgba(253, 192, 91, 0.30) 2.43%, rgba(255, 255, 255, 0.10) 5.45%, rgba(255, 255, 255, 0.00) 11.74%), linear-gradient(180deg, rgba(0, 0, 0, 0.00) 88.26%, rgba(0, 0, 0, 0.10) 94.55%, rgba(0, 0, 0, 0.20) 97.57%), #061C3E;
-    font-weight: 400;
-    font-size: .875rem;
-    letter-spacing: .019rem;
-    text-transform: none;
-    text-decoration: none;
-    line-height: 1.25rem;
-}
-.bg-black-opacity{
-    background: rgba(0, 0, 0, 0.5) !important;
-}
-.bg-select ul{
-        background: #1d2029;
-        border-radius: 0 0 .5rem .5rem;
-        box-shadow: 0 .5rem 2rem 0 rgba(0,0,0,.6);
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 100%;
-        display: block;
-        align-items: flex-start;
-        flex-direction: column;
-        padding: .5rem;
-        z-index: 1;
-}
-.searchInput:focus-visible{
-    border-color: transparent;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
+body,
+html {
+  background-color: #13161c;
+  max-width: 100svw;
+  min-height: 100svh;
+}
+
+.bg-gradient {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  position: relative;
+  min-height: 100svh;
+  z-index: 1;
+  overflow-x: hidden;
+}
+
+.bg-gradient:after,
+.bg-gradient:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.bg-gradient:before {
+  background-size: 100%;
+  content: "";
+  background-color: #13161c;
+  background-image: radial-gradient(
+      37.88% 68.62% at 50% 0,
+      rgba(10, 233, 138, 0.3) 0,
+      rgba(0, 124, 71, 0) 80%
+    ),
+    radial-gradient(
+      10% 10% at 50% 0,
+      rgba(10, 233, 138, 0.5) 0,
+      rgba(0, 124, 71, 0.4) 90%,
+      rgba(0, 124, 71, 0) 0
+    ),
+    radial-gradient(
+      100% 28.09% at 100% 10%,
+      rgba(10, 233, 138, 0.2) 0,
+      rgba(0, 124, 71, 0.1) 80%,
+      rgba(0, 124, 71, 0) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(0, 124, 71, 0.075) 35.79%,
+      rgba(0, 124, 71, 0.05) 80%,
+      #13161c
+    ),
+    radial-gradient(
+      74.84% 135.56% at 100% 10%,
+      rgba(0, 124, 71, 0.5) 0,
+      #13161c 80%
+    );
+  background-repeat: no-repeat;
+  /* background-size: 220%; */
+  height: 100svh;
+  z-index: -2;
+  filter: blur(50px);
+  top: -50px;
+  left: -50px;
+  right: -50px;
+  width: calc(100% + 100px);
+  overflow-x: hidden;
+}
+
+.banner-navidad {
+  background: linear-gradient(
+      180deg,
+      #ffffff1a 0%,
+      #fdc05b4d 2.43%,
+      #ffffff1a 5.45%,
+      #ffffff00 11.74%
+    ),
+    linear-gradient(
+      180deg,
+      #00000000 88.26%,
+      #0000001a 94.55%,
+      #00000033 97.57%
+    ),
+    url("https://static.platzi.com/media/uploads/stars_bg_e45a0554b4.png"),
+    linear-gradient(0deg, #061c3e 8.2%, #b83333 100%),
+    linear-gradient(
+      90deg,
+      #061c3e 8.2%,
+      #b83333 35.41%,
+      #fd5661 82.91%,
+      #061c3e 100%
+    );
+  color: #ffffff;
+  --ctaBorderColor: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(253, 192, 91, 0.3) 2.43%,
+      rgba(255, 255, 255, 0.1) 5.45%,
+      rgba(255, 255, 255, 0) 11.74%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 88.26%,
+      rgba(0, 0, 0, 0.1) 94.55%,
+      rgba(0, 0, 0, 0.2) 97.57%
+    ),
+    #061c3e;
+}
+
+.banner-navidad-end {
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(253, 192, 91, 0.3) 2.43%,
+      rgba(255, 255, 255, 0.1) 5.45%,
+      rgba(255, 255, 255, 0) 11.74%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 88.26%,
+      rgba(0, 0, 0, 0.1) 94.55%,
+      rgba(0, 0, 0, 0.2) 97.57%
+    ),
+    #061c3e;
+  font-weight: 400;
+  font-size: 0.875rem;
+  letter-spacing: 0.019rem;
+  text-transform: none;
+  text-decoration: none;
+  line-height: 1.25rem;
+}
+
+.bg-black-opacity {
+  background: rgba(0, 0, 0, 0.5) !important;
+}
+
+.bg-select ul {
+  background: #1d2029;
+  border-radius: 0 0 0.5rem 0.5rem;
+  box-shadow: 0 0.5rem 2rem 0 rgba(0, 0, 0, 0.6);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  display: block;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 0.5rem;
+}
+
+.searchInput:focus-visible {
+  border-color: transparent;
+}
+
+.input-shadow {
+  box-shadow: 0 0 120px 0 rgba(10, 233, 138, 0.251);
+}
+
+.bg-curse {
+  position: relative;
+}
+
+.bg-curse:before {
+  background-color: #1d2029;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+.bg-curse:after {
+  content: "";
+  position: absolute;
+  /* Necesario para posicionar correctamente */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  /* Asegura que esté detrás del contenido */
+  background-image: radial-gradient(circle, #39909d 70%, #1d2029 50%);
+  background-size: 25%;
+  background-position-y: 30px;
+  background-position-x: 185px;
+  background-repeat: no-repeat;
+  filter: blur(30px);
+  opacity: 0.9;
+}
+
+.bg-curse-icon {
+  position: relative;
+}
+
+.bg-curse-icon:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 4rem;
+  z-index: -1;
+  background-color: #59a15b;
+  filter: blur(20px);
+  opacity: 1;
+}
