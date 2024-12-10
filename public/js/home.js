@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const imageDisplay = document.getElementById("image-display");
 
   // Imagen por defecto
-  const defaultImage = "http://localhost/php-platzi/public/src/fondo.webp";
+  const defaultImage = "http://localhost/guirmabot/public/src/fondo.webp";
 
   // Cambiar la imagen cuando el mouse pasa sobre un <li>
   items.forEach((item) => {

@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['usuario_token'])) {
-    header("Location: http://localhost/php-platzi/views/inicio");
+    header("Location: http://localhost/guirmabot/views/inicio");
 } 
 ?>
 <!doctype html>
@@ -25,7 +25,7 @@ if (!isset($_SESSION['usuario_token'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="http://localhost/php-platzi/public/styles/admin.css">
+    <link rel="stylesheet" href="http://localhost/guirmabot/public/styles/admin.css">
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>

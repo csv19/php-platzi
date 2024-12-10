@@ -19,7 +19,7 @@ require_once APP . '/views/inc/login.php';
             <!-- --> <img class="rounded-full w-[20px] h-[20px]" alt="flag" loading="lazy" decoding="async"
               data-nimg="1"
               srcset="https://static.platzi.com/media/flags/PE.png 1x, https://static.platzi.com/media/flags/PE.png 2x"
-              src="https://static.platzi.com/media/flags/PE.png"><span class="text-green-500">S/141</span>en Plan expert
+              src="https://static.platzi.com/media/flags/PE.png"><span class="text-green-500">S/141</span>en Plan experto
             <!-- --> <span class="">Paga a <span class="text-green-500">4
                 <!-- -->
                 <!-- -->cuotas sin intereses</span></span></span>
@@ -33,11 +33,11 @@ require_once APP . '/views/inc/login.php';
   </div>
   <div
     class="px-4 md:px-0 py-6 text-left md:text-center text-2xl md:text-4xl lg:text-5xl font-bold leading-none md:leading-snug">
-    <h1 class="text-white">La escuela de tecnología <br><span class="text-green-400 ">de Latinoamérica</span></h1>
+    <h1 class="text-white">La escuela de tecnología <br><span class="text-green-400 ">del Perú</span></h1>
 
     <p class="text-sm md:text-lg lg:text-2xl text-gray-300 font-normal my-4">
       Más de 5 millones de estudiantes y más
-      <br>de 3.000 empresas aprenden en Platzi
+      <br>de 3.000 empresas aprenden en Guirmabot
       <br>
       ¿Qué quieres aprender?
       </b>
@@ -69,7 +69,7 @@ require_once APP . '/views/inc/login.php';
         </div>
         <p class="top-20 w-full absolute text-sm md:text-base font-normal">
           Empieza cualquier curso sin costo.<br class="hidden md:block">
-          O consigue Platzi para tu empresa
+          O consigue Guirmabot para tu empresa
         </p>
       </div>
 
@@ -138,7 +138,7 @@ require_once APP . '/views/inc/login.php';
     </div>
   </div>
   <div class="text-center">
-    <h3 class="text-3xl font-normal mt-20 mb-10"><span class="text-green-400">Más de 3000</span> empresas usan Platzi
+    <h3 class="text-3xl font-normal mt-20 mb-10"><span class="text-green-400">Más de 3000</span> empresas usan Guirmabot
       para la información de sus equipos</h3>
     <button
       class="border-green-500 bg-black-opacity border-solid border-2 hover:border-1 text-sm text-green-400 font-light rounded-md py-3 px-4 w-[150px]">Registrate</button>
@@ -148,14 +148,17 @@ require_once APP . '/views/inc/login.php';
 <section class="relative top-[-120px] px-4 md:px-0 w-full md:max-w-7xl mx-auto z-10">
   <div class="">
     <div class="relative flex flex-col justify-center items-center h-[900px]">
-      <div>
-        <h3 class="text-3xl font-normal mt-20 mb-10"><span class="text-green-400">Somos la autoridad</span> en <br>
-          escalar
-          la educación en <br> línea en América Latina</h3>
+    <div class="image-container">
+        <img class="rounded-md shadow-lg" src="http://localhost/guirmabot/public/src/ceo.png" alt="Imagen" />
+      </div>  
+    <div>
+        <h3 class="text-4xl text-green-400 text-center font-semibold mt-20 mb-10">Somos Guirmabot</h3>
+        <span class="text-xl text-center">
+        Descubre una academia online que transforma tu forma de aprender. En Guirmabot ofrecemos cursos diseñados para potenciar tus habilidades y abrirte nuevas oportunidades. Desde tecnología y diseño hasta negocios y desarrollo personal, nuestro contenido es creado por expertos y está disponible 24/7 para que aprendas a tu ritmo. Únete a nuestra comunidad global de estudiantes apasionados y da el siguiente paso hacia tus metas. Con Guirmabot, ¡el aprendizaje está a solo un clic de distancia!
+        </span>
+          
       </div>
-      <div class="image-container">
-        <img class="rounded-md shadow-lg" id="image-display" src="http://localhost/php-platzi/public/src/ceo.png" alt="Imagen" />
-      </div>
+      
     </div>
   </div>
 </section>
@@ -167,7 +170,7 @@ require_once APP . '/views/inc/login.php';
           escalar
           la educación en <br> línea en América Latina</h3>
         <ul class="line-descripcion pl-4">
-          <li class="item" data-img="http://localhost/php-platzi/public/src/fondo.webp">
+          <li class="item" data-img="http://localhost/guirmabot/public/src/fondo.webp">
             <div class="flex items-center gap-4"><svg width="40" height="40" fill="none" viewBox="0 0 26 26"
                 xmlns="http://www.w3.org/2000/svg">
                 <path fill="#0ae98a" fill-rule="evenodd"
@@ -180,7 +183,7 @@ require_once APP . '/views/inc/login.php';
               <p class="text-lg text-gray-400">Aprende algo nuevo cada 5 minutos</p>
             </div>
           </li>
-          <li class="item" data-img="http://localhost/php-platzi/public/src/fondo1.webp">
+          <li class="item" data-img="http://localhost/guirmabot/public/src/fondo1.webp">
             <div class="flex items-center gap-4"><svg width="40" height="40" fill="none" viewBox="0 0 40 40"
                 xmlns="http://www.w3.org/2000/svg">
                 <path fill="#0AE98A" fill-rule="evenodd"
@@ -191,7 +194,7 @@ require_once APP . '/views/inc/login.php';
               <p class="text-lg text-gray-400">Rutas profesionales te guían de principiante a profesional</p>
             </div>
           </li>
-          <li class="item" data-img="http://localhost/php-platzi/public/src/fondo2.webp">
+          <li class="item" data-img="http://localhost/guirmabot/public/src/fondo2.webp">
             <div class="flex items-center gap-4"><svg width="40" height="40" fill="none" viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg">
                 <path fill="#0AE98A" fill-rule="evenodd"
@@ -204,7 +207,7 @@ require_once APP . '/views/inc/login.php';
               <p class="text-lg text-gray-400">Pon a prueba tu progreso de forma interactiva</p>
             </div>
           </li>
-          <li class="item" data-img="http://localhost/php-platzi/public/src/fondo3.webp">
+          <li class="item" data-img="http://localhost/guirmabot/public/src/fondo3.webp">
             <div class="flex items-center gap-4"><svg width="40" height="40" fill="none" viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg">
                 <path fill="#0AE98A"
@@ -214,7 +217,7 @@ require_once APP . '/views/inc/login.php';
               <p class="text-lg text-gray-400">Inteligencia artificial y comunidad que responde tus dudas</p>
             </div>
           </li>
-          <li class="item" data-img="http://localhost/php-platzi/public/src/fondo4.webp">
+          <li class="item" data-img="http://localhost/guirmabot/public/src/fondo4.webp">
             <div class="flex items-center gap-4"><svg width="40" height="40" fill="none" viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg">
                 <g fill="#0AE98A" fill-rule="evenodd" clip-rule="evenodd">
@@ -230,7 +233,7 @@ require_once APP . '/views/inc/login.php';
               <p class="text-lg text-gray-400">Descarga las clases a tu teléfono y aprende sin Internet</p>
             </div>
           </li>
-          <li class="item" data-img="http://localhost/php-platzi/public/src/fondo5.webp">
+          <li class="item" data-img="http://localhost/guirmabot/public/src/fondo5.webp">
             <div class="flex items-center gap-4"><svg width="40" height="40" fill="none" viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg">
                 <path fill="#0AE98A" fill-rule="evenodd"
@@ -243,7 +246,7 @@ require_once APP . '/views/inc/login.php';
               <p class="text-lg text-gray-400">Mide el progreso de tu empresa</p>
             </div>
           </li>
-          <li class="item" data-img="http://localhost/php-platzi/public/src/fondo6.webp">
+          <li class="item" data-img="http://localhost/guirmabot/public/src/fondo6.webp">
             <div class="flex items-center gap-4"><svg width="40" height="40" fill="none" viewBox="0 0 40 40"
                 xmlns="http://www.w3.org/2000/svg">
                 <path fill="#0AE98A" fill-rule="evenodd"
@@ -257,7 +260,7 @@ require_once APP . '/views/inc/login.php';
         </ul>
       </div>
       <div class="image-container">
-        <img id="image-display" src="http://localhost/php-platzi/public/src/fondo.webp" alt="Imagen" />
+        <img id="image-display" src="http://localhost/guirmabot/public/src/fondo.webp" alt="Imagen" />
       </div>
     </div>
   </div>

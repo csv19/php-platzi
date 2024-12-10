@@ -351,3 +351,152 @@ ul.line-descripcion li div p:hover {
   display: none;
   overflow: hidden;
 }
+
+.snow:before {
+  animation-duration: 90s;
+  margin-left: -450px;
+  opacity: 0.65;
+  filter: blur(1.5px);
+}
+
+.snow:after,
+.snow:before {
+  animation-direction: reverse;
+}
+
+.snow:after {
+  margin-left: -300px;
+  opacity: 0.4;
+  animation-duration: 60s;
+  filter: blur(3px);
+}
+
+.snow,
+.snow:after,
+.snow:before {
+  position: fixed;
+  top: -900px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  background-image: radial-gradient(
+      3px 3px at 58px 81px,
+      hsla(0, 0%, 100%, 0.4) 50%,
+      transparent
+    ),
+    radial-gradient(
+      3px 3px at 369px 293px,
+      hsla(0, 0%, 100%, 0.3) 50%,
+      transparent
+    ),
+    radial-gradient(
+      3px 3px at 277px 270px,
+      hsla(0, 0%, 100%, 0.4) 50%,
+      transparent
+    ),
+    radial-gradient(
+      3px 3px at 90px 253px,
+      hsla(0, 0%, 100%, 0.5) 50%,
+      transparent
+    ),
+    radial-gradient(
+      3px 3px at 414px 201px,
+      hsla(0, 0%, 100%, 0.5) 50%,
+      transparent
+    ),
+    radial-gradient(
+      3px 3px at 227px 106px,
+      hsla(0, 0%, 100%, 0.3) 50%,
+      transparent
+    ),
+    radial-gradient(
+      3px 3px at 26px 587px,
+      hsla(0, 0%, 100%, 0.4) 50%,
+      transparent
+    ),
+    radial-gradient(
+      3px 3px at 848px 300px,
+      hsla(0, 0%, 100%, 0.3) 50%,
+      transparent
+    ),
+    radial-gradient(
+      3px 3px at 265px 596px,
+      hsla(0, 0%, 100%, 0.4) 50%,
+      transparent
+    ),
+    radial-gradient(
+      3px 3px at 126px 184px,
+      hsla(0, 0%, 100%, 0.4) 50%,
+      transparent
+    ),
+    radial-gradient(
+      3px 3px at 664px 769px,
+      hsla(0, 0%, 100%, 0.5) 50%,
+      transparent
+    ),
+    radial-gradient(
+      3px 3px at 19px 81px,
+      hsla(0, 0%, 100%, 0.4) 50%,
+      transparent
+    ),
+    radial-gradient(
+      3px 3px at 128px 787px,
+      hsla(0, 0%, 100%, 0.5) 50%,
+      transparent
+    ),
+    radial-gradient(
+      3px 3px at 58px 307px,
+      hsla(0, 0%, 100%, 0.4) 50%,
+      transparent
+    ),
+    radial-gradient(
+      3px 3px at 284px 254px,
+      hsla(0, 0%, 100%, 0.5) 50%,
+      transparent
+    ),
+    radial-gradient(
+      3px 3px at 751px 679px,
+      hsla(0, 0%, 100%, 0.3) 50%,
+      transparent
+    ),
+    radial-gradient(
+      3px 3px at 895px 336px,
+      hsla(0, 0%, 100%, 0.4) 50%,
+      transparent
+    ),
+    radial-gradient(
+      3px 3px at 734px 652px,
+      hsla(0, 0%, 100%, 0.3) 50%,
+      transparent
+    ),
+    radial-gradient(
+      3px 3px at 161px 80px,
+      hsla(0, 0%, 100%, 0.4) 50%,
+      transparent
+    ),
+    radial-gradient(
+      3px 3px at 457px 503px,
+      hsla(0, 0%, 100%, 0.4) 50%,
+      transparent
+    );
+  background-size: 900px 900px;
+  animation: snow 30s linear infinite;
+  animation-duration: 30s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
+  animation-name: snow;
+  animation-timeline: auto;
+  animation-range-start: normal;
+  content: "";
+}
+
+@keyframes snow {
+  100% {
+    transform: translateY(900px);
+  }
+}

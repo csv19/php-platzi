@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user=new Usuario;
     $login=$user->register($nombres,$apellido_p,$apellido_m,$edad,$email,$pass);
     if ($login) {
-        echo json_encode(['status' => 'success', 'redirect' => '/php-platzi/views/inicio']);
+        echo json_encode(['status' => 'success', 'redirect' => '/guirmabot/views/inicio']);
         exit(); 
     } else {
         // Enviar respuesta de error

@@ -125,8 +125,8 @@ private function sendRegisterEmail($email, $nombres)
         $mail->isSMTP();
         $mail->Host = 'sandbox.smtp.mailtrap.io';
         $mail->SMTPAuth = true;
-        $mail->Username = '9cb6993ead7e8b'; // Cambia esto por tu usuario de Mailtrap
-        $mail->Password = '579c7af895c7cc'; // Cambia esto por tu contraseña de Mailtrap
+        $mail->Username = '413cbd57ff7d1b'; // Cambia esto por tu usuario de Mailtrap
+        $mail->Password = '0f1bbabb41de13'; // Cambia esto por tu contraseña de Mailtrap
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 2525;
 
@@ -158,8 +158,8 @@ private function sendBecaEmail($email, $nombres)
         $mail->isSMTP();
         $mail->Host = 'sandbox.smtp.mailtrap.io';
         $mail->SMTPAuth = true;
-        $mail->Username = '9cb6993ead7e8b'; // Cambia esto por tu usuario de Mailtrap
-        $mail->Password = '579c7af895c7cc'; // Cambia esto por tu contraseña de Mailtrap
+        $mail->Username = '413cbd57ff7d1b'; // Cambia esto por tu usuario de Mailtrap
+        $mail->Password = '0f1bbabb41de13'; // Cambia esto por tu contraseña de Mailtrap
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 2525;
 

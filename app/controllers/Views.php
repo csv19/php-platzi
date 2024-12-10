@@ -14,6 +14,28 @@ class Views extends Control
     ];
     $this->load_view('inicio',$data);
   }
+  public function cursos(){
+    $cursoModel = $this->load_model('Curso');
+    $planModel = $this->load_model('Plan');
+    $datos = $cursoModel->getCursos();
+    $planes=$planModel->getPlanes();
+    $data = [
+        'datos' => $datos,
+        'planes' => $planes
+    ];
+    $this->load_view('cursos',$data);
+  }
+  public function suscripcion(){
+    $cursoModel = $this->load_model('Curso');
+    $planModel = $this->load_model('Plan');
+    $datos = $cursoModel->getCursos();
+    $planes=$planModel->getPlanes();
+    $data = [
+        'datos' => $datos,
+        'planes' => $planes
+    ];
+    $this->load_view('suscripcion',$data);
+  }
   public function programacion()
   {    
     $cursoModel = $this->load_model('Curso');

@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $beca = new Beca();
             $register = $beca->register($reason, $document['name']);
             if ($register) {
-                echo json_encode(['status' => 'success', 'redirect' => '/php-platzi/views/dashboard']);
+                echo json_encode(['status' => 'success', 'redirect' => '/guirmabot/views/dashboard']);
                 exit();
             } else {
                 echo json_encode(['status' => 'error', 'message' => 'Error al registrar la beca.']);

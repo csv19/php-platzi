@@ -14,7 +14,7 @@ class Core
             $this->controller = ucwords($url[0]);
             unset($url[0]);
         }else{
-            header("Location: http://localhost/php-platzi/views/inicio");
+            header("Location: http://localhost/guirmabot/views/inicio");
 
         }
 
@@ -29,7 +29,7 @@ class Core
             unset($url[1]);
             }
             else{
-                header("Location: http://localhost/php-platzi/views/inicio");
+                header("Location: http://localhost/guirmabot/views/inicio");
             }
         }
         
