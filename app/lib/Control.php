@@ -24,6 +24,7 @@ class Control
   {
     if(file_exists('../app/views/pages/' . $view . '.php'))
     {
+      extract($datos); // Extrae los datos como variables individuales
       require_once '../app/views/pages/' . $view . '.php';
     }
     else

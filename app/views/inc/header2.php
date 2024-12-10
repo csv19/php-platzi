@@ -1,6 +1,4 @@
-<?php
-session_start();
-?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -21,9 +19,9 @@ session_start();
 </head>
 
 <body>
-  <main class="bg-gradient">
-    <header class="container mx-auto py-4 z-10">
-      <div class="grid grid-cols-3 gap-4 justify-center items-center">
+  <main class="bg-gradient gap-0">
+    <header class="w-full p-4 bg-gray-900/80 z-10">
+      <div class="flex justify-between items-center">
         <div>
           <figure class=""><a href="localhost/php-platzi"><svg class="w-[90px] h-[30px]" fill="none"
                 viewBox="0 0 92 32" xmlns="http://www.w3.org/2000/svg">
@@ -43,19 +41,17 @@ session_start();
               </svg></a></figure>
         </div>
         <div class="flex justify-center items-center gap-8 text-white">
-          <span>Explorar</span>
-          <span>Comunidad</span>
+          <span>Cursos</span>
           <span>Planes</span>
-          <span>Empresas</span>
+          <span>Contactanos</span>
         </div>
             <div class="flex flex-row-reverse">
-             <?php
-              if (isset($_SESSION['usuario_token']) && $_SESSION['usuario_token']): ?>
-                  <a href="dashboard" class="px-3 py-2 rounded-lg bg-white text-black">Dashboard</a>
+              <?php
+                if (!isset($_SESSION['usuario_token'])):?>
+                    <button id="buttonLogin" class="px-3 py-2 rounded-lg bg-white text-black">Acceder</button>
               <?php else: ?>
-                  <button id="buttonLogin" class="px-3 py-2 rounded-lg bg-white text-black">Acceder</button>
-              <?php endif; ?>
-
+                  <span>Bienvenido</span>
+              <?php endif;?>
             </div>
       </div>
 

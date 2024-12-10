@@ -222,3 +222,132 @@ html {
   filter: blur(20px);
   opacity: 1;
 }
+
+ul.line-descripcion {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+ul.line-descripcion li {
+  display: flex;
+  align-items: center;
+  /* Centra el texto verticalmente */
+  margin: 10px 0;
+  padding-left: 30px;
+  opacity: 0.5;
+  /* Espacio a la izquierda para la línea */
+}
+
+ul.line-descripcion li:hover {
+  opacity: 1;
+}
+
+ul.line-descripcion li div p:hover {
+  color: #fff;
+}
+
+.line {
+  width: 4px;
+  height: 100%;
+  background-color: #0f6a48;
+  margin-right: 10px;
+  /* Espacio entre la línea y el texto */
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  /* Ajusta el tamaño máximo según sea necesario */
+  height: auto;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: opacity 0.5s ease-in-out;
+  /* Efecto suave de transición */
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  padding-top: 20px;
+  max-width: 600px;
+  margin-top: 50px;
+  overflow: hidden;
+}
+
+.bg-profesores {
+  background: linear-gradient(
+      180deg,
+      rgba(10, 233, 138, 0.48),
+      rgba(10, 233, 138, 0) 42.31%
+    ),
+    radial-gradient(
+      326.4% 182.46% at 100% 0,
+      rgba(10, 233, 138, 0.368) 0,
+      rgba(0, 170, 99, 0.4) 25.86%,
+      rgba(0, 196, 114, 0.4) 26.01%,
+      rgba(6, 207, 195, 0.204) 87.98%,
+      rgba(11, 216, 130, 0) 100%
+    );
+}
+
+.separator {
+  color: #c4c8ce;
+  display: block;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  line-height: 1.25rem;
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
+.bg-curse-page {
+  background-color: #0c1633;
+  background-size: 30%;
+  background-repeat: no-repeat;
+  background-position: 100% 0;
+  color: #eff3f8;
+  background-image: url(https://static.platzi.com/media/uploads/school_bg_computerscience_2x_efd708987d.png?updated_at=2022-08-11T13:58:02.011Z);
+}
+
+.bg-sectiones {
+  background: #0c1633;
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+
+.accordion {
+  color: #fff;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+.accordion:after {
+  content: "\02795";
+  font-size: 13px;
+  color: #777;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2796";
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+}

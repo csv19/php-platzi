@@ -13,6 +13,9 @@ class Core
         {
             $this->controller = ucwords($url[0]);
             unset($url[0]);
+        }else{
+            header("Location: http://localhost/php-platzi/views/inicio");
+
         }
 
         require_once '../app/controllers/' . $this->controller . '.php';
@@ -25,10 +28,14 @@ class Core
             $this->method = $url[1];
             unset($url[1]);
             }
+            else{
+                header("Location: http://localhost/php-platzi/views/inicio");
+            }
         }
-
+        
         $this->parameters = $url ? array_values($url) : [];
         call_user_func_array([$this->controller, $this->method], $this->parameters);
+
     }
 
 
