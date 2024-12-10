@@ -127,6 +127,31 @@ class Views extends Control
   public function beca(){
     $this->load_view('admin/beca');
   }
+  public function solicitud_beca(){
+    $this->load_view('solicitudBeca');
+  }
+  public function lista_beca(){
+    $this->load_view('admin/lista_beca');
+  }
+  public function lista_beca_json(){
+    $becaModel = $this->load_model('Beca');
+    $draw = isset($_GET['draw']) ? intval($_GET['draw']) : 0;
+    $start = isset($_GET['start']) ? intval($_GET['start']) : 0;
+    $length = isset($_GET['length']) ? intval($_GET['length']) : 10;
+    $becas = $becaModel->getBecasPaginated($start, $length);
+    $total = $becaModel->getTotalBecas();
+    $response = [
+      "draw" => $draw,
+        "recordsTotal" => $total,
+        "recordsFiltered" => $total,
+        'data' => $becas,
+    ];
+
+    // Devuelve los datos como JSON
+    header('Content-Type: application/json');
+    echo json_encode($response);
+    exit();
+  }
   public function planes(){
     $cursoModel = $this->load_model('Curso');
     $planModel = $this->load_model('Plan');

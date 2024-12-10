@@ -85,7 +85,7 @@ public function register($nombres, $apellido_p, $apellido_m, $edad, $email, $pas
 
     if ($stmt->execute()) {
         // Enviar correo después de registrar al usuario
-        $this->sendWelcomeEmail($email, $nombres);
+        $this->sendRegisterEmail($email, $nombres);
         return true;
     } else {
         throw new Exception("Error al ejecutar la consulta: " . $stmt->error);
@@ -94,7 +94,62 @@ public function register($nombres, $apellido_p, $apellido_m, $edad, $email, $pas
     $stmt->close();
 }
 
-private function sendWelcomeEmail($email, $nombres)
+public function register_beca($reason,$document){
+    $tabla = 'becas';
+    $estado='PENDIENTE';
+    $sql = "INSERT INTO $tabla (id_usuario,razon,documento,fecha_solicitud,estado) VALUES (?,?, ?, NOW(), ?)";
+    $stmt = $this->conn->prepare($sql);
+
+    if (!$stmt) {
+        throw new Exception("Error al preparar la consulta: " . $this->conn->error);
+    }
+
+    $stmt->bind_param("ssss",$_SESSION['usuario_id'],$reason,$document,$estado);
+
+    if ($stmt->execute()) {
+        // Enviar correo después de registrar al usuario
+        $this->sendBecaEmail($_SESSION['usuario_correo'], $_SESSION['usuario_nombre']);
+        return true;
+    } else {
+        throw new Exception("Error al ejecutar la consulta: " . $stmt->error);
+    }
+
+    $stmt->close();
+}
+private function sendRegisterEmail($email, $nombres)
+{
+    $mail = new PHPMailer(true);
+    
+    try {
+        // Configuración del servidor Mailtrap
+        $mail->isSMTP();
+        $mail->Host = 'sandbox.smtp.mailtrap.io';
+        $mail->SMTPAuth = true;
+        $mail->Username = '9cb6993ead7e8b'; // Cambia esto por tu usuario de Mailtrap
+        $mail->Password = '579c7af895c7cc'; // Cambia esto por tu contraseña de Mailtrap
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+        $mail->Port = 2525;
+
+        // Configuración del correo
+        $mail->setFrom('prueba_ucv@example.com', 'Proyecto Ucv');
+        $mail->addAddress($email, $nombres);
+
+        $mail->isHTML(true);
+        $mail->Subject = 'Bienvenido';
+        $mail->Body = "
+        <h1>Bienvenido/a, $nombres</h1>
+        <p>Estamos encantados de tenerte en nuestra plataforma de cursos.</p>
+        <p>Aquí encontrarás herramientas, recursos y el apoyo necesario para alcanzar tus objetivos educativos. Explora nuestros cursos y da el primer paso hacia tu aprendizaje.</p>
+        <p>Si tienes alguna pregunta, no dudes en contactarnos. Estamos aquí para ayudarte en cada paso del camino.</p>
+        <p>¡Mucho éxito en esta nueva aventura!</p>
+        <p><strong>El equipo de UCV </strong></p>
+        ";
+        $mail->send();
+    } catch (Exception $e) {
+        throw new Exception("No se pudo enviar el correo: {$mail->ErrorInfo}");
+    }
+}
+private function sendBecaEmail($email, $nombres)
 {
     $mail = new PHPMailer(true);
     
@@ -128,7 +183,6 @@ private function sendWelcomeEmail($email, $nombres)
     }
 }
 
-
     public function mostrar($script)
     {
         $data = $this->conn->query($script);
@@ -139,5 +193,24 @@ private function sendWelcomeEmail($email, $nombres)
 
         return $data->fetch_all(MYSQLI_ASSOC); // Devuelve un array asociativo
     }
-    
+    public function mostrar_becas($script,$start, $length)
+    {
+        $stmt = $this->conn->prepare($script);
+        $stmt->bind_param("ii", $start, $length);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        return $result->fetch_all(MYSQLI_ASSOC);
+        //$result = $this->conn->query($script);
+        // $becas = [];
+        // while ($row = $result->fetch_assoc()) {
+        //     $row['documento'] = is_string($row['documento']) ? $row['documento'] : json_encode($row['documento']);
+        //     $becas[] = $row;
+        // }
+        // return $becas;
+    }
+    public function mostrar_becas_total($script)
+    {
+        $result = $this->conn->query($script); 
+        return $result->fetch_assoc()['total'];
+    }
 }

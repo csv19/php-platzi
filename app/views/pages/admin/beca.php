@@ -2,19 +2,9 @@
 require_once APP . '/views/inc/header_admin.php';
 ?>
 <div class="bg-gray-100 min-h-screen flex items-center justify-center">
-  <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full">
+  <div class="bg-white p-8 rounded-lg shadow-lg w-[700px]">
     <h1 class="text-2xl font-semibold text-center mb-6">Solicitud de Beca</h1>
-    <form id="scholarship-form" class="space-y-4">
-      <!-- Nombre completo -->
-      <div>
-        <label for="name" class="block text-sm font-medium text-gray-700">Nombre completo</label>
-        <input type="text" id="name" name="name" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" required>
-      </div>
-      <!-- Correo electrónico -->
-      <div>
-        <label for="email" class="block text-sm font-medium text-gray-700">Correo electrónico</label>
-        <input type="email" id="email" name="email" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" required>
-      </div>
+    <form id="beca" enctype="multipart/form-data" class="space-y-4">
       <!-- Razón para la beca -->
       <div>
         <label for="reason" class="block text-sm font-medium text-gray-700">Razón para solicitar la beca</label>
@@ -25,14 +15,8 @@ require_once APP . '/views/inc/header_admin.php';
         <label for="document" class="block text-sm font-medium text-gray-700">Subir documento de validación (PDF o imagen)</label>
         <input type="file" id="document" name="document" accept=".pdf, .jpg, .jpeg, .png" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500" required>
       </div>
-      <!-- Estado de la solicitud -->
-      <div>
-        <label for="status" class="block text-sm font-medium text-gray-700">Estado de la solicitud</label>
-        <select id="status" name="status" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
-          <option value="pending">Pendiente</option>
-          <option value="accepted">Aceptada</option>
-          <option value="rejected">Rechazada</option>
-        </select>
+      <div class="flex justify-center items-center">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/S5caKfuYbeE?si=prVzYhB2e8k3vdZk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
       <!-- Botón de envío -->
       <div>
@@ -42,6 +26,7 @@ require_once APP . '/views/inc/header_admin.php';
       </div>
     </form>
   </div>
+  <div id="responseMessage"></div>
 </div>
 <?php 
 require_once APP . '/views/inc/footer_admin.php';

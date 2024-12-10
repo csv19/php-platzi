@@ -17,7 +17,7 @@ if (!isset($_SESSION['usuario_token'])) {?>
   <div id="singInLogin" class="bg-gray-900/90 h-full w-[450px] p-8 ml-auto shadow-md">
     <form id="login" class="h-[350px]">
       <div class="flex flex-col justify-center items-center px-6 mx-auto py-20">
-        <img class="w-[150px]" src="https://static.platzi.com/media/banners/Christmas_2024_Promo_Logo_1_1.png" alt="">
+        <img class="w-[80px]" src="../public/src/logo.png" alt="">
         <p>Ingresar con</p>
         <br>
         <input name="email" type="email" class=" text-sm bg-black/60 border border-gray-300/50 rounded-md w-full p-2"
@@ -38,8 +38,7 @@ if (!isset($_SESSION['usuario_token'])) {?>
   <div id="registerLogin" class="bg-gray-900/90 h-full w-[450px] p-8 ml-auto shadow-md hidden">
     <form id="register" class="h-[350px]">
       <div class="flex flex-col justify-center items-center px-6 mx-auto py-20">
-        <img class="w-[150px]" src="https://static.platzi.com/media/banners/Christmas_2024_Promo_Logo_1_1.png" alt="">
-        <p>Crear una cuenta con</p>
+        <img class="w-[80px]" src="../public/src/logo.png" alt="">        <p>Crear una cuenta con</p>
         <br>
         <input name="names" type="text" class=" text-sm bg-black/60 border border-gray-300/50 rounded-md w-full p-2"
           placeholder="Nombres">

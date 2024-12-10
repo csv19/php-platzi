@@ -147,6 +147,20 @@ require_once APP . '/views/inc/login.php';
 </section>
 <section class="relative top-[-120px] px-4 md:px-0 w-full md:max-w-7xl mx-auto z-10">
   <div class="">
+    <div class="relative flex flex-col justify-center items-center h-[900px]">
+      <div>
+        <h3 class="text-3xl font-normal mt-20 mb-10"><span class="text-green-400">Somos la autoridad</span> en <br>
+          escalar
+          la educación en <br> línea en América Latina</h3>
+      </div>
+      <div class="image-container">
+        <img class="rounded-md shadow-lg" id="image-display" src="http://localhost/php-platzi/public/src/ceo.png" alt="Imagen" />
+      </div>
+    </div>
+  </div>
+</section>
+<section class="relative top-[-120px] px-4 md:px-0 w-full md:max-w-7xl mx-auto z-10">
+  <div class="">
     <div class="relative flex justify-between items-start h-[700px]">
       <div>
         <h3 class="text-3xl font-normal mt-20 mb-10"><span class="text-green-400">Somos la autoridad</span> en <br>
