@@ -117,6 +117,30 @@ public function register_beca($reason,$document){
 
     $stmt->close();
 }
+public function register_curso($name,$icon,$description,$duration,$video,$price){
+    $tabla='cursos';
+    $url = str_replace(" ", "_", $name);
+
+    $sql="INSERT INTO $tabla (url,nombre,icon,descripcion,duracion,video,precio) VALUE (?,?,?,?,?,?)";
+    $stmt = $this->conn->prepare($sql);
+    if (!$stmt) {
+        throw new Exception("Error al preparar la consulta: " . $this->conn->error);
+    }
+
+    $stmt->bind_param("ssss",$url,$name,$icon,$description,$duration,$video,$price);
+    $stmt->bind_param("ssss",$_SESSION['usuario_id'],$reason,$document,$estado);
+
+    if ($stmt->execute()) {
+        // Enviar correo después de registrar al usuario
+        $this->sendBecaEmail($_SESSION['usuario_correo'], $_SESSION['usuario_nombre']);
+        return true;
+    } else {
+        throw new Exception("Error al ejecutar la consulta: " . $stmt->error);
+    }
+
+    $stmt->close();
+    
+}
 private function sendRegisterEmail($email, $nombres)
 {
     $mail = new PHPMailer(true);

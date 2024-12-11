@@ -243,5 +243,9 @@ class Views extends Control
     echo json_encode($response);
     exit();
   }
+  public function nuevo_curso(){
+    $this->load_view('admin/nuevo_curso');
+  }
+  
 
 }

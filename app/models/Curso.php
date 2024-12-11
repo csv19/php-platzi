@@ -3,6 +3,11 @@ require_once APP . '/database/conexion.php' ;
 
 class Curso
 {
+    public function register($name,$icon,$description,$duration,$video,$price){
+        $db = Database::getInstance();
+        $curso=$db->register_curso($name,$icon,$description,$duration,$video,$price);
+        return $curso;
+    }
 
     public function getCursos()
     {
