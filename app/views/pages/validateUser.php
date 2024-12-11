@@ -5,7 +5,6 @@ session_start(); // Asegúrate de iniciar la sesión
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = htmlspecialchars($_POST['email']);
     $pass = htmlspecialchars($_POST['pass']);
-    
     $user=new Usuario;
     $login=$user->login($email,$pass);
     if ($login) {

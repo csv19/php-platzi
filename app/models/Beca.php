@@ -18,13 +18,13 @@ class Beca
     public function getBecasPaginated($start, $length) {
         $db=Database::getInstance();
         $script = "SELECT b.*, u.* FROM becas b INNER JOIN usuarios u ON b.id_usuario=u.id LIMIT ?, ?";
-        $resultados=$db->mostrar_becas($script,$start, $length);
+        $resultados=$db->mostrar_datatables($script,$start, $length);
         return $resultados;
     }
     public function getTotalBecas() {
         $db=Database::getInstance();
         $script = "SELECT COUNT(*) as total FROM becas";
-        $resultados=$db->mostrar_becas_total($script);
+        $resultados=$db->mostrar_datatables_total($script);
         return $resultados;
     }
     // public function getUsuarioById($id)

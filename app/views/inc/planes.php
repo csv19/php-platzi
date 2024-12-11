@@ -24,9 +24,15 @@
       </div>
     </div>
   </div>
+  <div>    
+  </div>
   <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
     <?php foreach($planes as $plan): ?>
-    <?php $beneficios = json_decode($plan['beneficios']);?>
+    <?php $beneficios = json_decode($plan['beneficios']);
+    if (json_last_error() !== JSON_ERROR_NONE) {
+      echo 'Error en JSON: ' . json_last_error_msg();
+  }
+    ?>
     <div class="bg-gray-800/50 max-w-96 h-[550px] flex flex-col justify-between mx-auto p-8 rounded-lg">
       <div class="flex items-center justify-between py-4">
         <p class="text-xl">Plan <?=$plan['nombre']?></p>
@@ -39,7 +45,8 @@
           src="https://static.platzi.com/media/flags/PE.png">
         <span class="text-2xl">S/<?=$plan['precio']?></span>
       </div>
-      <?php if (!empty($beneficios->beneficios)): ?>
+      <?php if (!empty($beneficios->beneficios)):?>
+
       <ul>
         <?php foreach ($beneficios->beneficios as $item => $beneficio): ?>
         <li>
@@ -85,9 +92,13 @@
         <?php endforeach; ?>
       </ul>
       <?php endif; ?>
-      <button
-        class="<?php echo ($plan['nombre'] === 'Basico') ? 'bg-transparend text-white' : 'bg-green-400 text-black'; ?> w-full py-2 my-2 rounded-lg border border-green-400 cursor-pointer">Suscribete
-        a Plan <?= $plan['nombre'] ?></button>
+      <a href="reservar/<?= $plan['id'] ?>">
+        <button class="<?php echo ($plan['nombre'] === 'Basico') ? 'bg-transparent text-white' : 'bg-green-400 text-black'; ?> w-full py-2 my-2 rounded-lg border border-green-400 cursor-pointer">
+          Suscríbete a Plan <?= $plan['nombre'] ?>
+        </button>
+      </a>
+
+      
     </div>
     <?php endforeach;?>
   </div>

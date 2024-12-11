@@ -23,12 +23,13 @@
     <header class="w-full p-4 bg-gray-900/80 z-10">
       <div class="flex justify-between items-center">
         <div>
-          <figure class=""><a href="localhost/guirmabot"><img class="w-[80px]" src="../public/src/logo.png" alt=""></a></figure>
+          <figure class=""><a href="/guirmabot"><img class="w-[80px]" src="../public/src/logo.png" alt=""></a></figure>
         </div>
         <div class="flex justify-center items-center gap-8 text-white">
           <a href="cursos"><span>Nuestros Cursos</span></a>
           <a href="planes"><span>Planes</span></a>
-          <a href="contacto"><span>Contactános</span></a>
+          <a href="suscripcion"><span>Suscripción</span></a>
+          <a href="contacto"><span>Contáctanos</span></a>
         </div>
             <div class="flex flex-row-reverse">
               <?php

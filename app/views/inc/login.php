@@ -15,7 +15,7 @@ if (!isset($_SESSION['usuario_token'])) {?>
       </div>
     </div>
   <div id="singInLogin" class="bg-gray-900/90 h-full w-full md:w-[450px] p-8 ml-auto shadow-md">
-    <form id="login" class="h-[350px]">
+    <form id="login" class="">
       <div class="flex flex-col justify-center items-center px-6 mx-auto py-20">
         <img class="w-[80px]" src="../public/src/logo.png" alt="">
         <p>Ingresar con</p>

@@ -9,12 +9,13 @@ class Database
     private $host = "localhost";
     private $username = "root";
     private $password = "";
-    private $database = "platzi";
+    private $database = "guirmabot";
 
     // Constructor privado para evitar instanciación directa
     private function __construct()
     {
         $this->conn = new mysqli($this->host, $this->username, $this->password, $this->database);
+        $this->conn->set_charset("utf8mb4");
 
         if ($this->conn->connect_error) {
             throw new Exception("Error en la conexión: " . $this->conn->connect_error);
@@ -193,7 +194,7 @@ private function sendBecaEmail($email, $nombres)
 
         return $data->fetch_all(MYSQLI_ASSOC); // Devuelve un array asociativo
     }
-    public function mostrar_becas($script,$start, $length)
+    public function mostrar_datatables($script,$start, $length)
     {
         $stmt = $this->conn->prepare($script);
         $stmt->bind_param("ii", $start, $length);
@@ -208,7 +209,7 @@ private function sendBecaEmail($email, $nombres)
         // }
         // return $becas;
     }
-    public function mostrar_becas_total($script)
+    public function mostrar_datatables_total($script)
     {
         $result = $this->conn->query($script); 
         return $result->fetch_assoc()['total'];

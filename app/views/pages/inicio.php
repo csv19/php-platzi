@@ -2,8 +2,30 @@
 require_once APP . '/views/inc/header.php';
 require_once APP . '/views/inc/login.php';
 ?>
-<section class="container mx-auto z-20">
-  <div class="grid grid-cols-4 mx-auto items-center px-4 w-full lg:w-[1050px]">
+<section class="z-20 relative">
+  <div class="banner relative mb-4">
+    <div class="container flex flex-col md:flex-row items-center gap-4 mx-auto z-10 px-4">
+      <div class="w-full md:w-[1050px] py-4">
+        <h3 class="text-2xl md:text-6xl font-bold">¿Estás listo para transformar tu futuro?</h3><br>
+        <p class="text-justify text-base md:text-xl">En <strong>GrimarBot</strong> te ofrecemos cursos 100% online en las áreas más demandadas de la tecnología:
+        </p>
+        <ul class="text-xl">
+          <li><i class="fa-solid fa-laptop"></i> Desarrollo Web</li>
+          <li><i class="fa-solid fa-mobile-retro"></i> Aplicaciones Móviles</li>
+          <li><i class="fa-solid fa-robot"></i> Inteligencia Artificial</li>
+          <li><i class="fa-solid fa-shield-halved"></i> Ciberseguridad</li>
+          <li><i class="fa-solid fa-star"></i> Y mucho más</li>
+        </ul>
+        
+      </div>
+      <div class="relative w-full h-full ">
+          <img class="w-[250px] mx-auto z-10" src="../public/src/grimarbot.png" alt="">
+      </div>
+      
+    </div>
+    <div class="w-full h-full bg-banner absolute z-[-1] top-0"></div>
+  </div>
+  <div class="grid grid-cols-4 mx-auto items-center py-2 px-4 w-full lg:w-[1050px]">
     <div
       class="banner-navidad flex flex-col lg:flex-row gap-4 lg:rounded-l-lg col-span-4 lg:col-span-3 items-center p-4 h-auto lg:h-[60px]">
       <div>
@@ -19,7 +41,8 @@ require_once APP . '/views/inc/login.php';
             <!-- --> <img class="rounded-full w-[20px] h-[20px]" alt="flag" loading="lazy" decoding="async"
               data-nimg="1"
               srcset="https://static.platzi.com/media/flags/PE.png 1x, https://static.platzi.com/media/flags/PE.png 2x"
-              src="https://static.platzi.com/media/flags/PE.png"><span class="text-green-500">S/141</span>en Plan experto
+              src="https://static.platzi.com/media/flags/PE.png"><span class="text-green-500">S/141</span>en Plan
+            experto
             <!-- --> <span class="">Paga a <span class="text-green-500">4
                 <!-- -->
                 <!-- -->cuotas sin intereses</span></span></span>
@@ -34,7 +57,6 @@ require_once APP . '/views/inc/login.php';
   <div
     class="px-4 md:px-0 py-6 text-left md:text-center text-2xl md:text-4xl lg:text-5xl font-bold leading-none md:leading-snug">
     <h1 class="text-white">La escuela de tecnología <br><span class="text-green-400 ">del Perú</span></h1>
-
     <p class="text-sm md:text-lg lg:text-2xl text-gray-300 font-normal my-4">
       Más de 5 millones de estudiantes y más
       <br>de 3.000 empresas aprenden en Guirmabot
@@ -79,30 +101,30 @@ require_once APP . '/views/inc/login.php';
 <section class="relative top-[-120px] px-4 md:px-0 w-full md:max-w-7xl mx-auto z-10">
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 justify-center items-center gap-2 sm:gap-4 md:gap-7">
     <?php foreach ($datos as $item => $curso): ?>
-      <a class="w-full h-full" href="<?= $datos[$item]['url'] ?>">
-    <div
-      class="cursor-pointer rounded-md bg-gray-800/50 overflow-hidden bg-curse flex gap-4 justify-between items-center p-2 h-[90px]">
-      
-      <div class="flex items-center gap-4">
-        <div class="bg-curse-icon"><img width="40" src="<?= $datos[$item]['icon'] ?>" alt=""></div>
+    <a class="w-full h-full" href="<?= $datos[$item]['url'] ?>">
+      <div
+        class="cursor-pointer rounded-md bg-gray-800/50 overflow-hidden bg-curse flex gap-4 justify-between items-center p-2 h-[90px]">
+
+        <div class="flex items-center gap-4">
+          <div class="bg-curse-icon"><img width="40" src="<?= $datos[$item]['icon'] ?>" alt=""></div>
+          <div>
+            <p class="text-gray-300 font-bold text-xs uppercase">Curso de</p>
+            <p class="text-base font-semibold capitalize"><?= $datos[$item]['nombre'] ?></p>
+          </div>
+        </div>
         <div>
-          <p class="text-gray-300 font-bold text-xs uppercase">Curso de</p>
-          <p class="text-base font-semibold capitalize"><?= $datos[$item]['nombre'] ?></p>
+          <svg width="1em" height="1em" fill="none" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path fill="#fff" fill-rule="evenodd"
+              d="M7.891 6.225a.625.625 0 0 1 .884 0l3.333 3.333a.625.625 0 0 1 0 .884l-3.333 3.333a.625.625 0 1 1-.884-.884L10.783 10 7.89 7.109a.625.625 0 0 1 0-.884"
+              clip-rule="evenodd"></path>
+          </svg>
         </div>
       </div>
-      <div>
-        <svg width="1em" height="1em" fill="none" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-          <path fill="#fff" fill-rule="evenodd"
-            d="M7.891 6.225a.625.625 0 0 1 .884 0l3.333 3.333a.625.625 0 0 1 0 .884l-3.333 3.333a.625.625 0 1 1-.884-.884L10.783 10 7.89 7.109a.625.625 0 0 1 0-.884"
-            clip-rule="evenodd"></path>
-        </svg>
-      </div>
-    </div>
     </a>
     <?php endforeach; ?>
   </div>
 </section>
-<section class="relative top-[-120px] container mx-auto z-10">
+<section class="relative top-[-120px] container px-4 md:px-0 mx-auto z-10">
   <div class="text-center max-w-xl mx-auto">
     <h3 class="text-3xl font-normal mt-20 mb-10">Descubre tu ruta de <br> aprendizaje personalizada</h3>
     <textarea placeholder="Quiero crear experiencias de usuario atractivas en la web, escribir y crear contenido"
@@ -148,21 +170,25 @@ require_once APP . '/views/inc/login.php';
 <section class="relative top-[-120px] px-4 md:px-0 w-full md:max-w-7xl mx-auto z-10">
   <div class="">
     <div class="relative flex flex-col justify-center items-center h-[900px]">
-    <div class="image-container">
+      <div class="w-full md:w-[500px]">
         <img class="rounded-md shadow-lg" src="http://localhost/guirmabot/public/src/ceo.png" alt="Imagen" />
-      </div>  
-    <div>
+      </div>
+      <div>
         <h3 class="text-4xl text-green-400 text-center font-semibold mt-20 mb-10">Somos Guirmabot</h3>
         <span class="text-xl text-center">
-        Descubre una academia online que transforma tu forma de aprender. En Guirmabot ofrecemos cursos diseñados para potenciar tus habilidades y abrirte nuevas oportunidades. Desde tecnología y diseño hasta negocios y desarrollo personal, nuestro contenido es creado por expertos y está disponible 24/7 para que aprendas a tu ritmo. Únete a nuestra comunidad global de estudiantes apasionados y da el siguiente paso hacia tus metas. Con Guirmabot, ¡el aprendizaje está a solo un clic de distancia!
+          Descubre una academia online que transforma tu forma de aprender. En Guirmabot ofrecemos cursos diseñados para
+          potenciar tus habilidades y abrirte nuevas oportunidades. Desde tecnología y diseño hasta negocios y
+          desarrollo personal, nuestro contenido es creado por expertos y está disponible 24/7 para que aprendas a tu
+          ritmo. Únete a nuestra comunidad global de estudiantes apasionados y da el siguiente paso hacia tus metas. Con
+          Guirmabot, ¡el aprendizaje está a solo un clic de distancia!
         </span>
-          
+
       </div>
-      
+
     </div>
   </div>
 </section>
-<section class="relative top-[-120px] px-4 md:px-0 w-full md:max-w-7xl mx-auto z-10">
+<section class="relative top-[-120px] px-4 md:px-0 w-full md:max-w-7xl mx-auto z-10 hidden md:block">
   <div class="">
     <div class="relative flex justify-between items-start h-[700px]">
       <div>

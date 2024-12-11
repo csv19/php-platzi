@@ -11,6 +11,16 @@ html {
   min-height: 100svh;
 }
 
+.banner {
+  background: linear-gradient(to bottom, #13161c 0%, rgba(68, 83, 114, 0.7) 50%, rgba(19, 22, 28, 0.0) 100%);
+}
+.bg-banner{
+  background-image: url('../src/banner.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.2;
+}
 .bg-gradient {
   color: #fff;
   display: flex;
@@ -495,6 +505,31 @@ ul.line-descripcion li div p:hover {
   content: "";
 }
 
+.flying-logo {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: fly 5s infinite alternate;
+}
+
+@keyframes fly {
+  0% {
+      transform: translateX(-50%) translateY(0) rotate(0deg);
+  }
+  25% {
+      transform: translateX(-50%) translateY(-30px) rotate(10deg);
+  }
+  50% {
+      transform: translateX(-50%) translateY(0) rotate(-10deg);
+  }
+  75% {
+      transform: translateX(-50%) translateY(30px) rotate(10deg);
+  }
+  100% {
+      transform: translateX(-50%) translateY(0) rotate(0deg);
+  }
+}
 @keyframes snow {
   100% {
     transform: translateY(900px);

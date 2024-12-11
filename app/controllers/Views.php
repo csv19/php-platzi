@@ -152,6 +152,29 @@ class Views extends Control
   public function solicitud_beca(){
     $this->load_view('solicitudBeca');
   }
+  public function contacto(){
+    $this->load_view('contacto');
+  }
+  public function planes(){
+    $cursoModel = $this->load_model('Curso');
+    $planModel = $this->load_model('Plan');
+    $datos = $cursoModel->getCursoById(8);
+    $planes=$planModel->getPlanes();
+    $data = [
+        'curso' => $datos,
+        'planes' => $planes
+    ];
+    $this->load_view('planes',$data);
+  }
+  public function reservar($id)
+  {
+    $planModel = $this->load_model('Plan');
+    $plan=$planModel->getPlanById($id);
+    $data = [
+      'plan' => $plan
+  ];
+    $this->load_view('reserva',$data);
+  }
   public function lista_beca(){
     $this->load_view('admin/lista_beca');
   }
@@ -174,20 +197,51 @@ class Views extends Control
     echo json_encode($response);
     exit();
   }
-  public function planes(){
-    $cursoModel = $this->load_model('Curso');
-    $planModel = $this->load_model('Plan');
-    $datos = $cursoModel->getCursoById(8);
-    $planes=$planModel->getPlanes();
-    $data = [
-        'curso' => $datos,
-        'planes' => $planes
-    ];
-    $this->load_view('planes',$data);
+
+  public function lista_usuario(){
+    $this->load_view('admin/lista_usuario');
   }
-  public function update($id)
-  {
-    echo "Update view " . $id;
+  public function lista_usuario_json(){
+    $usuarioModel = $this->load_model('Usuario');
+    $draw = isset($_GET['draw']) ? intval($_GET['draw']) : 0;
+    $start = isset($_GET['start']) ? intval($_GET['start']) : 0;
+    $length = isset($_GET['length']) ? intval($_GET['length']) : 10;
+    $usuarios = $usuarioModel->getUsuariosPaginated($start, $length);
+    $total = $usuarioModel->getTotalUsuarios();
+    $response = [
+      "draw" => $draw,
+        "recordsTotal" => $total,
+        "recordsFiltered" => $total,
+        'data' => $usuarios,
+    ];
+
+    // Devuelve los datos como JSON
+    header('Content-Type: application/json');
+    echo json_encode($response);
+    exit();
+  }
+
+  public function lista_plan(){
+    $this->load_view('admin/lista_plan');
+  }
+  public function lista_plan_json(){
+    $planModel = $this->load_model('Plan');
+    $draw = isset($_GET['draw']) ? intval($_GET['draw']) : 0;
+    $start = isset($_GET['start']) ? intval($_GET['start']) : 0;
+    $length = isset($_GET['length']) ? intval($_GET['length']) : 10;
+    $planes = $planModel->getPlanesPaginated($start, $length);
+    $total = $planModel->getTotalplanes();
+    $response = [
+      "draw" => $draw,
+        "recordsTotal" => $total,
+        "recordsFiltered" => $total,
+        'data' => $planes,
+    ];
+
+    // Devuelve los datos como JSON
+    header('Content-Type: application/json');
+    echo json_encode($response);
+    exit();
   }
 
 }

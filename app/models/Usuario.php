@@ -20,7 +20,18 @@ class Usuario
         $resultados = $db->mostrar($script);
         return $resultados;
     }
-
+    public function getUsuariosPaginated($start, $length) {
+        $db=Database::getInstance();
+        $script = "SELECT * FROM usuarios LIMIT ?, ?";
+        $resultados=$db->mostrar_datatables($script,$start, $length);
+        return $resultados;
+    }
+    public function getTotalUsuarios() {
+        $db=Database::getInstance();
+        $script = "SELECT COUNT(*) as total FROM usuarios";
+        $resultados=$db->mostrar_datatables_total($script);
+        return $resultados;
+    }
     // public function getUsuarioById($id)
     // {
     //     $stmt = $this->conn->prepare("SELECT * FROM usuarios WHERE id = ?");

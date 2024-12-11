@@ -1,6 +1,6 @@
 <footer class="flex flex-col items-center justify-center pb-4 z-10">
   <img class="w-[50px]" src="../public/src/logo.png" alt="">
-  <p class="text-gray-300 text-sm ">Transformamos la economía de nuestros países entrenando a la próxima generación de
+  <p class="text-center text-gray-300 text-sm ">Transformamos la economía de nuestros países entrenando a la próxima generación de
     profesionales en tecnología.</p>
   <div class="text-sm text-green-400"><span class="" >Nuestras redes:</span>
     <div class="grid grid-cols-4 gap-4 pt-2">

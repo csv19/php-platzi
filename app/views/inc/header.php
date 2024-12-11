@@ -24,16 +24,19 @@ session_start();
 <body>
   <main class="bg-gradient">
     <header class="container mx-auto py-4 z-20">
-      <div class="grid grid-cols-3 gap-4 justify-center items-center">
-        <div>
-          <figure class=""><a href="localhost/guirmabot">
-            <img class="w-[80px]" src="../public/src/logo.png" alt="">
-          </a></figure>
+      <div class="grid grid-cols-3 gap-4 justify-center items-center px-4 md:px-0">
+        <div class="relative">
+          <div class="hidden md:block flying-logo">
+            <a href="/guirmabot">
+              <img class="w-[80px]" src="../public/src/logo.png" alt="">
+            </a>
         </div>
-        <div class="flex justify-center items-center gap-8 text-white">
+        </div>
+        <div class="flex justify-end md:justify-center items-center gap-4 md:gap-8 text-white">
           <a href="cursos"><span>Nuestros Cursos</span></a>
           <a href="planes"><span>Planes</span></a>
-          <a href="contacto"><span>Contactános</span></a>
+          <a href="suscripcion"><span>Suscripción</span></a>
+          <a href="contacto"><span>Contáctanos</span></a>
         </div>
             <div class="flex flex-row-reverse">
              <?php

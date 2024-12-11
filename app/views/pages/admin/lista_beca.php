@@ -2,7 +2,7 @@
 require_once APP . '/views/inc/header_admin.php';
 ?>
 <section class="container mx-auto py-8">
-  <table id="example" class="display">
+  <table id="becas" class="display">
     <thead>
         <tr>
             <th>ID</th>
