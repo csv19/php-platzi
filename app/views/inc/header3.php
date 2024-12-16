@@ -32,5 +32,10 @@
           <a href="../contacto"><span>Contáctanos</span></a>
         </div>
       </div>
-
+ <?php
+              if (isset($_SESSION['usuario_token']) && $_SESSION['usuario_token']): ?>
+                  <a href="dashboard" class="px-3 py-2 rounded-lg bg-white text-black">Dashboard</a>
+              <?php else: ?>
+                  <button id="buttonLogin" class="px-3 py-2 rounded-lg bg-white text-black">Acceder</button>
+              <?php endif; ?>
     </header>

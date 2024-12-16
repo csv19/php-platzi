@@ -16,5 +16,5 @@
 </body>
 <script src="http://localhost/guirmabot/public/js/home.js"></script>
 <script src="http://localhost/guirmabot/public/js/login.js"></script>
-
+<script src="http://localhost/guirmabot/public/js/ruta.js"></script>
 </html>

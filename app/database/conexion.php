@@ -9,7 +9,7 @@ class Database
     private $host = "localhost";
     private $username = "root";
     private $password = "";
-    private $database = "guirmabot";
+    private $database = "platzi";
 
     // Constructor privado para evitar instanciación directa
     private function __construct()
@@ -127,17 +127,22 @@ public function register_curso($name,$icon,$description,$duration,$video,$price)
         throw new Exception("Error al preparar la consulta: " . $this->conn->error);
     }
 
-    $stmt->bind_param("ssss",$url,$name,$icon,$description,$duration,$video,$price);
-    $stmt->bind_param("ssss",$_SESSION['usuario_id'],$reason,$document,$estado);
-
+    $stmt->bind_param("sssssss",$url,$name,$icon,$description,$duration,$video,$price);
+    $stmt->close();
+    
+}
+public function register_ruta($user_id,$curse_id){
+    $tabla='ruta';
+    $user_id=intval($user_id);
+    $curse_id=intval($curse_id);
+    $sql="INSERT INTO $tabla (id_curso, id_usuario) VALUE (?,?)";
+    $stmt = $this->conn->prepare($sql);
+    $stmt->bind_param("ss", $curse_id, $user_id); // Ajusta los tipos y valores
     if ($stmt->execute()) {
-        // Enviar correo después de registrar al usuario
-        $this->sendBecaEmail($_SESSION['usuario_correo'], $_SESSION['usuario_nombre']);
-        return true;
+        return $stmt->insert_id; // Devuelve el ID insertado (para INSERTs)
     } else {
-        throw new Exception("Error al ejecutar la consulta: " . $stmt->error);
+        throw new Exception("Error al preparar la consulta: " . $this->conn->error);
     }
-
     $stmt->close();
     
 }
@@ -208,17 +213,16 @@ private function sendBecaEmail($email, $nombres)
     }
 }
 
-    public function mostrar($script)
+public function mostrar($script)
     {
         $data = $this->conn->query($script);
-
         if (!$data) {
             throw new Exception("Error en la consulta: " . $this->conn->error);
         }
 
         return $data->fetch_all(MYSQLI_ASSOC); // Devuelve un array asociativo
     }
-    public function mostrar_datatables($script,$start, $length)
+ public function mostrar_datatables($script,$start, $length)
     {
         $stmt = $this->conn->prepare($script);
         $stmt->bind_param("ii", $start, $length);
@@ -233,7 +237,7 @@ private function sendBecaEmail($email, $nombres)
         // }
         // return $becas;
     }
-    public function mostrar_datatables_total($script)
+public function mostrar_datatables_total($script)
     {
         $result = $this->conn->query($script); 
         return $result->fetch_assoc()['total'];

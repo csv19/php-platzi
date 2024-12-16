@@ -17,14 +17,23 @@ class Curso
         return $resultados;
     }
 
-    public function getCursoById($id)
+    public function getCursoById($url)
     {
-        $conditional='id='.$id;
-        $script="SELECT c.*,  s.nombre as seccion, s.descripcion as seccion_descripcion, s.duracion as seccion_duracion FROM cursos c INNER JOIN secciones s ON c.id=s.id_curso WHERE c.id=".$id;
+        $script="SELECT c.*,  s.nombre as seccion, s.descripcion as seccion_descripcion, s.duracion as seccion_duracion FROM cursos c INNER JOIN secciones s ON c.id=s.id_curso WHERE c.url='".$url."'";
         $db = Database::getInstance();
         $resultados = $db->mostrar($script);
         return $resultados;
     }
 
-    
+    public function registerRuta($user_id,$curse_id){
+        $db = Database::getInstance();
+        $ruta=$db->register_ruta($user_id,$curse_id);
+        return $ruta;
+    }
+    public function getRutaCurso($user_id,$curse_id){
+        $db = Database::getInstance();
+        $script="SELECT * FROM ruta WHERE id_curso=".$curse_id." AND id_usuario=".$user_id;
+        $resultados= $db->mostrar($script);
+        return $resultados;
+    }
 }

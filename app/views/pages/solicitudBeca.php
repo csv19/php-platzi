@@ -1,6 +1,5 @@
 <?php
 require_once APP . '/models/Beca.php' ;
-session_start();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $reason = htmlspecialchars($_POST['reason']);
     $document = $_FILES['document'];

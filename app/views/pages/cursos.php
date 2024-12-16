@@ -10,7 +10,7 @@ require_once APP . '/views/inc/login.php';
   
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 justify-center items-center gap-2 sm:gap-4 md:gap-7">
     <?php foreach ($datos as $item => $curso): ?>
-      <a class="w-full h-full" href="<?= $datos[$item]['url'] ?>">
+      <a class="w-full h-full" href="curso/<?= $datos[$item]['url'] ?>">
         <div
           class="cursor-pointer rounded-md bg-gray-800/50 overflow-hidden bg-curse flex gap-4 justify-between items-center p-2 h-[90px]">
           

@@ -1,6 +1,5 @@
 <?php
 require_once APP . '/models/Usuario.php' ;
-session_start(); // Asegúrate de iniciar la sesión
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = htmlspecialchars($_POST['email']);

@@ -77,7 +77,7 @@ require_once APP . '/views/inc/login.php';
             <?php foreach ($datos as $item => $curso): 
             if($item <=2):
           ?>
-            <a href="<?= $datos[$item]['url'] ?>">
+            <a href="curso/<?= $datos[$item]['url'] ?>">
               <li class="hover:cursor-pointer flex items-center hover:bg-gray-800/50 p-4 rounded-md gap-4 capitalize">
                 <figure><img alt="<?= $datos[$item]['nombre'] ?>" loading="lazy" width="20" height="20" decoding="async"
                     data-nimg="1" srcset="" src="<?= $datos[$item]['icon'] ?>" style="color: transparent;"></figure>
@@ -101,7 +101,7 @@ require_once APP . '/views/inc/login.php';
 <section class="relative top-[-120px] px-4 md:px-0 w-full md:max-w-7xl mx-auto z-10">
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 justify-center items-center gap-2 sm:gap-4 md:gap-7">
     <?php foreach ($datos as $item => $curso): ?>
-    <a class="w-full h-full" href="<?= $datos[$item]['url'] ?>">
+    <a class="w-full h-full z-10" href="curso/<?= $datos[$item]['url'] ?>">
       <div
         class="cursor-pointer rounded-md bg-gray-800/50 overflow-hidden bg-curse flex gap-4 justify-between items-center p-2 h-[90px]">
 

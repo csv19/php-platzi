@@ -15,6 +15,21 @@ require_once APP . '/views/inc/login.php';
       <div class="p-4">
         <p class="text-xl font-semibold text-justify"><?=$curso[0]['descripcion']?></p>
       </div>
+      <?php if (isset($_SESSION['usuario_token']) && $_SESSION['usuario_token']):
+            if(!isset($rutas[0]['id_curso'])):
+      ?>
+        <div class="px-4">
+          <form id="ruta">
+            <input name="usuario" class="hidden" type="text" value="<?= $_SESSION['usuario_id'] ?>">
+            <input name="curso" class="hidden" type="text" value="<?=$curso[0]['id'] ?>">
+            <button type="submit" class="px-4 py-2 rounded-md text-black bg-white">Guardar en ruta</button>
+          </form>
+        </div>
+      <?php 
+            endif;
+          endif;
+      ?>
+      
     </div>
   </div>
   <div class="container mx-auto relative bg-sections">

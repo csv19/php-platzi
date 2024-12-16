@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 if (!isset($_SESSION['usuario_token'])) {
     header("Location: http://localhost/guirmabot/views/inicio");
@@ -302,7 +301,7 @@ if (!isset($_SESSION['usuario_token'])) {
                 </div>
               </div>
               <div class="p-2 md:block text-left">
-                <h2 class="text-sm font-semibold text-gray-800"><?php echo $_SESSION['usuario_nombre']; ?></h2>
+                <h2 class="text-sm font-semibold text-gray-800"><?= $_SESSION['usuario_nombre']; ?></h2>
                 <p class="text-xs text-gray-500">Usuario</p>
               </div>
             </button>

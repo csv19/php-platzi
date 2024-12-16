@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -26,18 +25,18 @@
           <figure class=""><a href="/guirmabot"><img class="w-[80px]" src="../public/src/logo.png" alt=""></a></figure>
         </div>
         <div class="flex justify-center items-center gap-8 text-white">
-          <a href="cursos"><span>Nuestros Cursos</span></a>
-          <a href="planes"><span>Planes</span></a>
-          <a href="suscripcion"><span>Suscripción</span></a>
-          <a href="contacto"><span>Contáctanos</span></a>
+          <a href="../cursos"><span>Nuestros Cursos</span></a>
+          <a href="../planes"><span>Planes</span></a>
+          <a href="../suscripcion"><span>Suscripción</span></a>
+          <a href="../contacto"><span>Contáctanos</span></a>
         </div>
             <div class="flex flex-row-reverse">
-              <?php
-                if (!isset($_SESSION['usuario_token'])):?>
-                    <button id="buttonLogin" class="px-3 py-2 rounded-lg bg-white text-black">Acceder</button>
+               <?php
+              if (isset($_SESSION['usuario_token']) && $_SESSION['usuario_token']): ?>
+                  <a href="../dashboard" class="px-3 py-2 rounded-lg bg-white text-black">Dashboard</a>
               <?php else: ?>
-                  <span>Bienvenido</span>
-              <?php endif;?>
+                  <button id="buttonLogin" class="px-3 py-2 rounded-lg bg-white text-black">Acceder</button>
+              <?php endif; ?>
             </div>
       </div>
 
