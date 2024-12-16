@@ -6,7 +6,7 @@ $(document).ready(function () {
     const formData = $(this).serialize(); // Serializa los datos del formulario
 
     $.ajax({
-      url: "login", // Ruta al archivo PHP
+      url: "http://localhost/guirmabot/views/login", // Ruta al archivo PHP
       type: "POST",
       dataType: "json", // Asegúrate de procesar como JSON
       data: formData,

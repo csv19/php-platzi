@@ -26,11 +26,12 @@ class Views extends Control
     ];
     $this->load_view('cursos',$data);
   }
+  
   public function curso($url){
     $cursoModel = $this->load_model('Curso');
     $planModel = $this->load_model('Plan');
-    $datos = $cursoModel->getCursoById($url);
     $planes=$planModel->getPlanes();
+    $datos = $cursoModel->getCursoById($url);
     $rutas=[];
     if(isset($_SESSION['usuario_id'])){
       $curso_id=$datos[0]['id'];
@@ -55,113 +56,10 @@ class Views extends Control
     ];
     $this->load_view('suscripcion',$data);
   }
-  // public function programacion()
-  // {    
-  //   $cursoModel = $this->load_model('Curso');
-  //   $planModel = $this->load_model('Plan');
-  //   $datos = $cursoModel->getCursoById(2);
-  //   $planes=$planModel->getPlanes();
-  //   $data = [
-  //       'curso' => $datos,
-  //       'planes' => $planes
-  //   ];
-  //   $this->load_view('curso',$data);
-  // }
-  // public function base_datos()
-  // {    
-  //   $cursoModel = $this->load_model('Curso');
-  //   $planModel = $this->load_model('Plan');
-  //   $datos = $cursoModel->getCursoById(3);
-  //   $planes=$planModel->getPlanes();
-  //   $data = [
-  //       'curso' => $datos,
-  //       'planes' => $planes
-  //   ];
-  //   $this->load_view('curso',$data);
-  // }
-  // public function inteligencia_artificial()
-  // {    
-  //   $cursoModel = $this->load_model('Curso');
-  //   $planModel = $this->load_model('Plan');
-  //   $datos = $cursoModel->getCursoById(1);
-  //   $rutas=[];
-  //   if(isset($_SESSION['usuario_id'])){
-  //     $rutas = $cursoModel->getRutaCurso($_SESSION['usuario_id'],1);
-  //   }
-  //   $planes=$planModel->getPlanes();
-  //   $data = [
-  //       'curso' => $datos,
-  //       'planes' => $planes,
-  //       'rutas'=> $rutas
-  //   ];
-  //   $this->load_view('curso',$data);
-  // }
-  // public function ciberseguridad()
-  // {    
-  //   $cursoModel = $this->load_model('Curso');
-  //   $planModel = $this->load_model('Plan');
-  //   $datos = $cursoModel->getCursoById(4);
-  //   $planes=$planModel->getPlanes();
-  //   $rutas=[];
-  //   if(isset($_SESSION['usuario_id'])){
-  //     $rutas = $cursoModel->getRutaCurso($_SESSION['usuario_id'],1);
-  //   }
-  //   $data = [
-  //       'curso' => $datos,
-  //       'planes' => $planes,
-  //       'rutas'=> $rutas
-  //   ];
-  //   $this->load_view('curso',$data);
-  // }
-  // public function cloud()
-  // {    
-  //   $cursoModel = $this->load_model('Curso');
-  //   $planModel = $this->load_model('Plan');
-  //   $datos = $cursoModel->getCursoById(7);
-  //   $planes=$planModel->getPlanes();
-  //   $data = [
-  //       'curso' => $datos,
-  //       'planes' => $planes
-  //   ];
-  //   $this->load_view('curso',$data);
-  // }
-  // public function ingles()
-  // {    
-  //   $cursoModel = $this->load_model('Curso');
-  //   $planModel = $this->load_model('Plan');
-  //   $datos = $cursoModel->getCursoById(5);
-  //   $planes=$planModel->getPlanes();
-  //   $data = [
-  //       'curso' => $datos,
-  //       'planes' => $planes
-  //   ];
-  //   $this->load_view('curso',$data);
-  // }
-  // public function marketing()
-  // {    
-  //   $cursoModel = $this->load_model('Curso');
-  //   $planModel = $this->load_model('Plan');
-  //   $datos = $cursoModel->getCursoById(6);
-  //   $planes=$planModel->getPlanes();
-  //   $data = [
-  //       'curso' => $datos,
-  //       'planes' => $planes
-  //   ];
-  //   $this->load_view('curso',$data);
-  // }
-  // public function javascript()
-  // {    
-  //   $cursoModel = $this->load_model('Curso');
-  //   $planModel = $this->load_model('Plan');
-  //   $datos = $cursoModel->getCursoById(8);
-  //   $planes=$planModel->getPlanes();
-  //   $data = [
-  //       'curso' => $datos,
-  //       'planes' => $planes
-  //   ];
-  //   $this->load_view('curso',$data);
-  // }
+  public function rutas(){
 
+  }
+  
   /*Admin */
   public function login(){
     $this->load_view('validateUser');
@@ -275,9 +173,22 @@ class Views extends Control
   public function nuevo_curso(){
     $this->load_view('admin/nuevo_curso');
   }
+  public function ver_ruta(){
+    $cursoModel = $this->load_model('Curso');
+    $datos=[];
+    if(isset($_SESSION['usuario_id'])){
+      $datos = $cursoModel->getRutaCursoAdmin($_SESSION['usuario_id']);
+    }
+    $data = [
+        'curso' => $datos
+    ];
+    $this->load_view('admin/ruta',$data);
+  }
   public function registrar_ruta(){
     $this->load_view('registraRuta');
   }
-  
+  public function registrar_curso(){
+    $this->load_view('registraCurso');
+  }
 
 }

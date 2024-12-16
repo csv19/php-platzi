@@ -91,7 +91,11 @@ if (!isset($_SESSION['usuario_token'])) {
           <ul class="pl-7 mt-2 hidden group-[.selected]:block">
             <li class="mb-4">
               <a href="nuevo_curso"
-                class="text-gray-900 text-sm flex items-center hover:text-[#f84525] before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Solicitud</a>
+                class="text-gray-900 text-sm flex items-center hover:text-[#f84525] before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Registrar</a>
+            </li>
+            <li class="mb-4">
+              <a href="ver_ruta"
+                class="text-gray-900 text-sm flex items-center hover:text-[#f84525] before:contents-[''] before:w-1 before:h-1 before:rounded-full before:bg-gray-300 before:mr-3">Ruta</a>
             </li>
           </ul>
         </li>

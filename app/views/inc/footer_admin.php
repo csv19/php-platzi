@@ -5,6 +5,7 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="http://localhost/guirmabot/public/js/dashboard.js"></script>
     <script src="http://localhost/guirmabot/public/js/login.js"></script>
+    <script src="http://localhost/guirmabot/public/js/curso.js"></script>
     <script src="http://localhost/guirmabot/public/js/beca.js"></script>
     <script src="http://localhost/guirmabot/public/js/datatable.js"></script>
  </body>

@@ -3,10 +3,11 @@ $(document).ready(function () {
     e.preventDefault(); // Evita que el formulario se envíe de manera convencional
 
     var form_data = new FormData(this);
-
+    console.log(form_data);
+    
     $.ajax({
       type: "POST",
-      url: "registrar_ruta", // Ajusta la URL según el nombre correcto de tu archivo PHP
+      url: "http://localhost/guirmabot/views/registrar_ruta", // Ajusta la URL según el nombre correcto de tu archivo PHP
       contentType: false,
       processData: false,
       data: form_data,

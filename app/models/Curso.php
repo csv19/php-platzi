@@ -3,9 +3,9 @@ require_once APP . '/database/conexion.php' ;
 
 class Curso
 {
-    public function register($name,$icon,$description,$duration,$video,$price){
+    public function register($name,$image,$icon,$description,$duration,$video,$price){
         $db = Database::getInstance();
-        $curso=$db->register_curso($name,$icon,$description,$duration,$video,$price);
+        $curso=$db->register_curso($name,$image,$icon,$description,$duration,$video,$price);
         return $curso;
     }
 
@@ -32,7 +32,13 @@ class Curso
     }
     public function getRutaCurso($user_id,$curse_id){
         $db = Database::getInstance();
-        $script="SELECT * FROM ruta WHERE id_curso=".$curse_id." AND id_usuario=".$user_id;
+        $script="SELECT * FROM rutas WHERE id_curso=".$curse_id." AND id_usuario=".$user_id;
+        $resultados= $db->mostrar($script);
+        return $resultados;
+    }
+    public function getRutaCursoAdmin($user_id){
+        $db = Database::getInstance();
+        $script="SELECT * FROM cursos WHERE id IN (SELECT id_curso FROM rutas WHERE id_usuario=".$user_id.")";
         $resultados= $db->mostrar($script);
         return $resultados;
     }

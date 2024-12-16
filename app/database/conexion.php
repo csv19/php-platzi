@@ -9,7 +9,7 @@ class Database
     private $host = "localhost";
     private $username = "root";
     private $password = "";
-    private $database = "platzi";
+    private $database = "guirmabot";
 
     // Constructor privado para evitar instanciación directa
     private function __construct()
@@ -117,22 +117,22 @@ public function register_beca($reason,$document){
 
     $stmt->close();
 }
-public function register_curso($name,$icon,$description,$duration,$video,$price){
+public function register_curso($name,$image,$icon,$description,$duration,$video,$price){
     $tabla='cursos';
     $url = str_replace(" ", "_", $name);
 
-    $sql="INSERT INTO $tabla (url,nombre,icon,descripcion,duracion,video,precio) VALUE (?,?,?,?,?,?)";
+    $sql="INSERT INTO $tabla (url,image,nombre,icon,descripcion,duracion,video,precio) VALUE (?,?,?,?,?,?,?,?)";
     $stmt = $this->conn->prepare($sql);
     if (!$stmt) {
         throw new Exception("Error al preparar la consulta: " . $this->conn->error);
     }
 
-    $stmt->bind_param("sssssss",$url,$name,$icon,$description,$duration,$video,$price);
+    $stmt->bind_param("ssssssss",$url,$image,$name,$icon,$description,$duration,$video,$price);
     $stmt->close();
     
 }
 public function register_ruta($user_id,$curse_id){
-    $tabla='ruta';
+    $tabla='rutas';
     $user_id=intval($user_id);
     $curse_id=intval($curse_id);
     $sql="INSERT INTO $tabla (id_curso, id_usuario) VALUE (?,?)";

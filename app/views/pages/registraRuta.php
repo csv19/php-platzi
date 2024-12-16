@@ -5,8 +5,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $user_id = htmlspecialchars($_POST['usuario']);
     $curse_id = htmlspecialchars($_POST['curso']);
     $curso=new Curso;
-    $curso=$curso->registerRuta($user_id,$curse_id);
-    if ($curso) {
+    $ruta=$curso->registerRuta($user_id,$curse_id);
+    if ($ruta) {
         echo json_encode(['status' => 'success', 'redirect' => '/guirmabot/views/dashboard']);
         exit(); 
     } else {

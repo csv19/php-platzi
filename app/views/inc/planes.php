@@ -92,7 +92,7 @@
         <?php endforeach; ?>
       </ul>
       <?php endif; ?>
-      <a href="reservar/<?= $plan['id'] ?>">
+      <a href="http://localhost/guirmabot/views/reservar/<?= $plan['id'] ?>">
         <button class="<?php echo ($plan['nombre'] === 'Basico') ? 'bg-transparent text-white' : 'bg-green-400 text-black'; ?> w-full py-2 my-2 rounded-lg border border-green-400 cursor-pointer">
           Suscríbete a Plan <?= $plan['nombre'] ?>
         </button>

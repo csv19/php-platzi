@@ -34,6 +34,7 @@ class Core
         }
         
         $this->parameters = $url ? array_values($url) : [];
+        // print_r($this->parameters);
         call_user_func_array([$this->controller, $this->method], $this->parameters);
 
     }
