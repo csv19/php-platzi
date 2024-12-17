@@ -6,10 +6,10 @@ class Database
     private static $instance = null; // Instancia única
     private $conn;
 
-    private $host = "localhost";
+    private $host = "localhost:33066";
     private $username = "root";
     private $password = "";
-    private $database = "platzi";
+    private $database = "guirmabot";
 
     // Constructor privado para evitar instanciación directa
     private function __construct()
@@ -136,24 +136,19 @@ public function register_curso($name, $image, $icon, $description, $duration, $v
 
     // Asignar parámetros
     $stmt->bind_param("sssssssi", $url, $name, $image, $icon, $description, $duration, $video, $price);
+    $insertId = $stmt->insert_id;
+    $sql1="INSERT INTO $tabla1 (id_curso,nombre, apellidos, imagen) 
+    VALUES (?, ?, ?, ?)";
+    $stmt1 = $this->conn->prepare($sql1);
+    if (!$stmt1) {
+        throw new Exception("Error al preparar la consulta: " . $this->conn->error);
+    }
+    $stmt1->bind_param("ssss", $insertId, $nameTeach,$lastNameTeach,$imagenTeach);
 
     // Ejecutar la consulta
-    if ($stmt->execute()) {
-        $insertId = $stmt->insert_id; // Obtener el ID insertado
+    if ($stmt->execute() && $stmt1->execute()) {
         $stmt->close(); // Cerrar el statement
-        
-        $sql1="INSERT INTO $tabla1 (id_curso,nombre, apellidos, imagen) 
-            VALUES (?, ?, ?, ?)";
-        $stmt1 = $this->conn->prepare($sql1);
-        if (!$stmt1) {
-            throw new Exception("Error al preparar la consulta: " . $this->conn->error);
-        }
-
-        // Asignar parámetros
-        $stmt1->bind_param("ssss", $insertId, $nameTeach,$lastNameTeach,$imagenTeach);
-        if ($stmt1->execute()) {
-            $stmt1->close(); // Cerrar el statement
-        }
+        $stmt1->close(); 
 
     } else {
         $stmt->close(); // Asegurar el cierre del statement en caso de error
@@ -168,6 +163,20 @@ public function register_ruta($user_id,$curse_id){
     $sql="INSERT INTO $tabla (id_curso, id_usuario) VALUE (?,?)";
     $stmt = $this->conn->prepare($sql);
     $stmt->bind_param("ss", $curse_id, $user_id); // Ajusta los tipos y valores
+    if ($stmt->execute()) {
+        return $stmt->insert_id; // Devuelve el ID insertado (para INSERTs)
+    } else {
+        throw new Exception("Error al preparar la consulta: " . $this->conn->error);
+    }
+    $stmt->close();
+    
+}
+public function register_seccion($curso_id,$name,$description,$time){
+    $tabla='secciones';
+    $curse_id=$curso_id;
+    $sql="INSERT INTO $tabla (id_curso, nombre, descripcion, duracion) VALUE (?,?,?,?)";
+    $stmt = $this->conn->prepare($sql);
+    $stmt->bind_param("ssss", $curse_id, $name,$description,$time); // Ajusta los tipos y valores
     if ($stmt->execute()) {
         return $stmt->insert_id; // Devuelve el ID insertado (para INSERTs)
     } else {

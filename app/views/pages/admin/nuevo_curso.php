@@ -41,7 +41,7 @@ require_once APP . '/views/inc/header_admin.php';
                     <input class="p-2 w-full border border-gray-500 rounded-md" type="text" name="nameTeach">
                 </div>
                 <div>
-                    <label for="lastNameTeach" class="block text-sm font-medium text-gray-700">Apellios del Profesor@</label>
+                    <label for="lastNameTeach" class="block text-sm font-medium text-gray-700">Apellidos del Profesor@</label>
                     <input class="p-2 w-full border border-gray-500 rounded-md" type="text" name="lastNameTeach">
                 </div>
                 <div>

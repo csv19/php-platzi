@@ -4,10 +4,10 @@ require_once APP . '/views/inc/header_admin.php';
 <div class="bg-gray-100 min-h-screen flex items-center justify-center">
     <div class="bg-white p-8 rounded-lg shadow-lg w-[700px]">
         <h1 class="text-2xl font-semibold text-center mb-6">Registro de Secciones</h1>
-        <form id="registroCurso" enctype="multipart/form-data" class="space-y-4">
+        <form id="registroSeccion" enctype="multipart/form-data" class="space-y-4">
             <!-- Razón para la beca -->
             <div>
-                <label for="image" class="block text-sm font-medium text-gray-700">Curso</label>
+                <label for="curso" class="block text-sm font-medium text-gray-700">Curso</label>
                 <select name="curso" id="">
                     <option class="uppercase" value="" disabled selected>Seleccione</option>
                     <?php foreach ($datos as $curso): ?>

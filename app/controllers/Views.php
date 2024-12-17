@@ -190,6 +190,9 @@ class Views extends Control
   public function registrar_curso(){
     $this->load_view('registraCurso');
   }
+  public function registrar_seccion(){
+    $this->load_view('registraSeccion');
+  }
   public function nueva_seccion(){
     $cursoModel = $this->load_model('Curso');
     $datos = $cursoModel->getCursos();

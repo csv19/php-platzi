@@ -30,6 +30,11 @@ class Curso
         $ruta=$db->register_ruta($user_id,$curse_id);
         return $ruta;
     }
+    public function registerSeccion($curso,$name,$description,$time){
+        $db = Database::getInstance();
+        $ruta=$db->register_seccion($curso,$name,$description,$time);
+        return $ruta;
+    }
     public function getRutaCurso($user_id,$curse_id){
         $db = Database::getInstance();
         $script="SELECT * FROM rutas WHERE id_curso=".$curse_id." AND id_usuario=".$user_id;
