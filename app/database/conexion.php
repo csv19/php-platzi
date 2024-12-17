@@ -9,7 +9,7 @@ class Database
     private $host = "localhost";
     private $username = "root";
     private $password = "";
-    private $database = "guirmabot";
+    private $database = "platzi";
 
     // Constructor privado para evitar instanciación directa
     private function __construct()
@@ -117,20 +117,50 @@ public function register_beca($reason,$document){
 
     $stmt->close();
 }
-public function register_curso($name,$image,$icon,$description,$duration,$video,$price){
-    $tabla='cursos';
-    $url = str_replace(" ", "_", $name);
+public function register_curso($name, $image, $icon, $description, $duration, $video, $price,$nameTeach,$lastNameTeach,$imagenTeach) {
+    $tabla = 'cursos';
+    $tabla1='profesores';
+    // Generar una URL válida a partir del nombre
+    $url = strtolower(preg_replace('/[^a-zA-Z0-9_-]/', '_', $name));
 
-    $sql="INSERT INTO $tabla (url,image,nombre,icon,descripcion,duracion,video,precio) VALUE (?,?,?,?,?,?,?,?)";
+    // Query de inserción
+    $sql = "INSERT INTO $tabla (url, nombre, image, icon, descripcion, duracion, video, precio) 
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+
+    // Preparar la consulta
     $stmt = $this->conn->prepare($sql);
+
     if (!$stmt) {
         throw new Exception("Error al preparar la consulta: " . $this->conn->error);
     }
 
-    $stmt->bind_param("ssssssss",$url,$image,$name,$icon,$description,$duration,$video,$price);
-    $stmt->close();
-    
+    // Asignar parámetros
+    $stmt->bind_param("sssssssi", $url, $name, $image, $icon, $description, $duration, $video, $price);
+
+    // Ejecutar la consulta
+    if ($stmt->execute()) {
+        $insertId = $stmt->insert_id; // Obtener el ID insertado
+        $stmt->close(); // Cerrar el statement
+        
+        $sql1="INSERT INTO $tabla1 (id_curso,nombre, apellidos, imagen) 
+            VALUES (?, ?, ?, ?)";
+        $stmt1 = $this->conn->prepare($sql1);
+        if (!$stmt1) {
+            throw new Exception("Error al preparar la consulta: " . $this->conn->error);
+        }
+
+        // Asignar parámetros
+        $stmt1->bind_param("ssss", $insertId, $nameTeach,$lastNameTeach,$imagenTeach);
+        if ($stmt1->execute()) {
+            $stmt1->close(); // Cerrar el statement
+        }
+
+    } else {
+        $stmt->close(); // Asegurar el cierre del statement en caso de error
+        throw new Exception("Error al ejecutar la consulta: " . $stmt->error);
+    }
 }
+
 public function register_ruta($user_id,$curse_id){
     $tabla='rutas';
     $user_id=intval($user_id);

@@ -8,33 +8,45 @@ require_once APP . '/views/inc/header_admin.php';
             <!-- Razón para la beca -->
             <div>
                 <label for="image" class="block text-sm font-medium text-gray-700">Link de Portada</label>
-                <input class="w-full border border-gray-500 rounded-md" type="text" name="image">
+                <input class="p-2 w-full border border-gray-500 rounded-md" type="text" name="image">
             </div>
             <div class="grid grid-cols-2 gap-4">
                 <div>
                     <label for="name" class="block text-sm font-medium text-gray-700">Nombre del Curso</label>
-                    <input class="w-full border border-gray-500 rounded-md" type="text" name="name">
+                    <input class="p-2 w-full border border-gray-500 rounded-md" type="text" name="name">
                 </div>
                 <div>
                     <label for="description" class="block text-sm font-medium text-gray-700">Descripcion del
                         Curso</label>
-                    <input class="w-full border border-gray-500 rounded-md" type="text" name="description">
+                    <input class="p-2 w-full border border-gray-500 rounded-md" type="text" name="description">
                 </div>
                 <div>
                     <label for="time" class="block text-sm font-medium text-gray-700">Duración del Curso</label>
-                    <input class="w-full border border-gray-500 rounded-md" type="text" name="time">
+                    <input class="p-2 w-full border border-gray-500 rounded-md" type="text" name="time">
                 </div>
                 <div>
                     <label for="video" class="block text-sm font-medium text-gray-700">Link del Video</label>
-                    <input class="w-full border border-gray-500 rounded-md" type="text" name="video">
+                    <input class="p-2 w-full border border-gray-500 rounded-md" type="text" name="video">
                 </div>
                 <div>
                     <label for="icon" class="block text-sm font-medium text-gray-700">Link del Icono</label>
-                    <input class="w-full border border-gray-500 rounded-md" type="text" name="icon">
+                    <input class="p-2 w-full border border-gray-500 rounded-md" type="text" name="icon">
                 </div>
                 <div>
                     <label for="price" class="block text-sm font-medium text-gray-700">Precio del Curso</label>
-                    <input class="w-full border border-gray-500 rounded-md" type="text" name="price">
+                    <input class="p-2 w-full border border-gray-500 rounded-md" type="text" name="price">
+                </div>
+                <div>
+                    <label for="nameTeach" class="block text-sm font-medium text-gray-700">Nombre del Profesor@</label>
+                    <input class="p-2 w-full border border-gray-500 rounded-md" type="text" name="nameTeach">
+                </div>
+                <div>
+                    <label for="lastNameTeach" class="block text-sm font-medium text-gray-700">Apellios del Profesor@</label>
+                    <input class="p-2 w-full border border-gray-500 rounded-md" type="text" name="lastNameTeach">
+                </div>
+                <div>
+                    <label for="imagenTeach" class="block text-sm font-medium text-gray-700">Link de imagen Profesor@</label>
+                    <input class="p-2 w-full border border-gray-500 rounded-md" type="text" name="imagenTeach">
                 </div>
             </div>
 

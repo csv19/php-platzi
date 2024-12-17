@@ -8,9 +8,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $video = htmlspecialchars($_POST['video']);
     $icon = htmlspecialchars($_POST['icon']);
     $price = htmlspecialchars($_POST['price']);
+    $nameTeach = htmlspecialchars($_POST['nameTeach']);
+    $lastNameTeach = htmlspecialchars($_POST['lastNameTeach']);
+    $imagenTeach = htmlspecialchars($_POST['imagenTeach']);
 
     $curso=new Curso;
-    $ruta=$curso->register($name,$image,$icon,$description,$time,$video,$price);
+    $ruta=$curso->register($name,$image,$icon,$description,$time,$video,$price,$nameTeach,$lastNameTeach,$imagenTeach);
     if ($ruta) {
         echo json_encode(['status' => 'success', 'redirect' => '/guirmabot/views/nuevo_curso']);
         exit(); 

@@ -3,16 +3,16 @@ require_once APP . '/database/conexion.php' ;
 
 class Curso
 {
-    public function register($name,$image,$icon,$description,$duration,$video,$price){
+    public function register($name,$image,$icon,$description,$duration,$video,$price,$nameTeach,$lastNameTeach,$imagenTeach){
         $db = Database::getInstance();
-        $curso=$db->register_curso($name,$image,$icon,$description,$duration,$video,$price);
+        $curso=$db->register_curso($name,$image,$icon,$description,$duration,$video,$price,$nameTeach,$lastNameTeach,$imagenTeach);
         return $curso;
     }
 
     public function getCursos()
     {
         $db = Database::getInstance();
-        $script="SELECT c.nombre, c.icon, c.descripcion, c.duracion, c.precio,c.url, p.nombre as nombre_profesor, p.apellidos as apellidos_profesor, p.imagen as imagen_profesor FROM cursos c INNER JOIN profesores p on c.id=p.id_curso";
+        $script="SELECT c.id, c.nombre, c.icon, c.descripcion, c.duracion, c.precio,c.url, p.nombre as nombre_profesor, p.apellidos as apellidos_profesor, p.imagen as imagen_profesor FROM cursos c INNER JOIN profesores p on c.id=p.id_curso";
         $resultados = $db->mostrar($script);
         return $resultados;
     }
